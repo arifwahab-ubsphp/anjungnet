@@ -1,0 +1,197 @@
+CRITICAL - 2024-06-06 03:26:04 --> Undefined property: Modules\AdminDashboard\Controllers\Property_c::$User_m
+in ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php on line 25.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: Modules\\AdminDashboard\\Controllers\\Property_c::$User_m', 'C:\\xampp\\htdocs\\PropertyPrime\\Modules\\AdminDashboard\\Controllers\\Property_c.php', 25, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:27:20 --> Undefined property: Modules\AdminDashboard\Controllers\Property_c::$User_m
+in ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php on line 25.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: Modules\\AdminDashboard\\Controllers\\Property_c::$User_m', 'C:\\xampp\\htdocs\\PropertyPrime\\Modules\\AdminDashboard\\Controllers\\Property_c.php', 25, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:28:24 --> Undefined property: Modules\AdminDashboard\Controllers\Property_c::$User_m
+in ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php on line 26.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: Modules\\AdminDashboard\\Controllers\\Property_c::$User_m', 'C:\\xampp\\htdocs\\PropertyPrime\\Modules\\AdminDashboard\\Controllers\\Property_c.php', 26, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:31:03 --> Class 'Modules\AdminDashboard\Models\CI_Model' not found
+in ROOTPATH\Modules\AdminDashboard\Models\User_m.php on line 6.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(312): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\PropertyPrime\\Modules/AdminDashboard\\Models\\User_m.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('Modules\\AdminDashboard\\Models\\User_m')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('Modules\\AdminDashboard\\Models\\User_m')
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): spl_autoload_call('Modules\\AdminDashboard\\Models\\User_m')
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:32:08 --> syntax error, unexpected 'public' (T_PUBLIC), expecting '{'
+in ROOTPATH\Modules\AdminDashboard\Models\User_m.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\PropertyPrime\\Modules/AdminDashboard\\Models\\User_m.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('Modules\\AdminDashboard\\Models\\User_m')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('Modules\\AdminDashboard\\Models\\User_m')
+ 4 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): spl_autoload_call('Modules\\AdminDashboard\\Models\\User_m')
+ 5 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:32:24 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(635): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(838): CodeIgniter\Model->builder()
+ 3 ROOTPATH\Modules\AdminDashboard\Models\User_m.php(15): CodeIgniter\Model->__get('load')
+ 4 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): Modules\AdminDashboard\Models\User_m->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:33:11 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(635): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(838): CodeIgniter\Model->builder()
+ 3 ROOTPATH\Modules\AdminDashboard\Models\User_m.php(15): CodeIgniter\Model->__get('load')
+ 4 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): Modules\AdminDashboard\Models\User_m->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:39:59 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(635): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(838): CodeIgniter\Model->builder()
+ 3 ROOTPATH\Modules\AdminDashboard\Models\User_m.php(13): CodeIgniter\Model->__get('load')
+ 4 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): Modules\AdminDashboard\Models\User_m->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:49:25 --> Call to a member function database() on null
+in ROOTPATH\Modules\AdminDashboard\Models\User_m.php on line 23.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): Modules\AdminDashboard\Models\User_m->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:49:43 --> inteam2 is not a valid database connection group.
+in SYSTEMPATH\Database\Config.php on line 71.
+ 1 SYSTEMPATH\Model.php(151): CodeIgniter\Database\Config::connect('inteam2')
+ 2 ROOTPATH\Modules\AdminDashboard\Models\User_m.php(21): CodeIgniter\Model->__construct()
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): Modules\AdminDashboard\Models\User_m->__construct()
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:50:00 --> Call to a member function database() on null
+in ROOTPATH\Modules\AdminDashboard\Models\User_m.php on line 23.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): Modules\AdminDashboard\Models\User_m->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:50:17 --> Call to a member function database() on null
+in ROOTPATH\Modules\AdminDashboard\Models\User_m.php on line 23.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(25): Modules\AdminDashboard\Models\User_m->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:54:54 --> Undefined property: Modules\AdminDashboard\Controllers\Property_c::$User_m
+in ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php on line 28.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: Modules\\AdminDashboard\\Controllers\\Property_c::$User_m', 'C:\\xampp\\htdocs\\PropertyPrime\\Modules\\AdminDashboard\\Controllers\\Property_c.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 03:59:05 --> Undefined property: Modules\AdminDashboard\Controllers\Property_c::$User_m
+in ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php on line 28.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: Modules\\AdminDashboard\\Controllers\\Property_c::$User_m', 'C:\\xampp\\htdocs\\PropertyPrime\\Modules\\AdminDashboard\\Controllers\\Property_c.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-06 04:02:07 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\xampp\htdocs\PropertyPrime\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\PropertyPrime\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'inteam2', 3306, '', 0)
+#1 C:\xampp\htdocs\PropertyPrime\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\PropertyPrime\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\PropertyPrime\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`NoK...', Array, false)
+#4 C:\xampp\htdocs\PropertyPrime\Modules\AdminDashboard\Models\User_m.php(211): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PropertyPrime\Modules\AdminDashboard\Controllers\Property_c.php(28): Modules\AdminDashboard\Models\User_m->inteam_get_user('18163')
+#6 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+#7 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+#8 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PropertyPrime\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\xampp\htdocs\PropertyPrime\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\PropertyPrime\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\PropertyPrime\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\PropertyPrime\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`NoK...', Array, false)
+#3 C:\xampp\htdocs\PropertyPrime\Modules\AdminDashboard\Models\User_m.php(211): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\PropertyPrime\Modules\AdminDashboard\Controllers\Property_c.php(28): Modules\AdminDashboard\Models\User_m->inteam_get_user('18163')
+#5 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+#6 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+#7 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\PropertyPrime\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-06-06 04:02:07 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`NoK`, `e`.`Panggil`, `a`.`Nama`, `a`.`NoKP`, `b`.`Email`, `b`.`KodTempatKerja`, `c`.`NPusat`, `c`.`KodPusat`, `d`.`NStesen`, `d`.`NStesen1`, `d`.`NStesen15`, `d`.`Alamat1_Lokasi`, `d`.`Alamat2_Lokasi`, `d`.`Poskod_Lokasi`, `d`.`Bandar_Lokasi`, `d`.`KodStesen`, `d`.`Negeri`
+FROM `peribadi` `a`
+LEFT JOIN `perkhidmatan` `b` ON `a`.`NoK` = `b`.`NoK`
+LEFT JOIN `ja_pusat` `c` ON `c`.`KodPusatSispen` = `b`.`KodTempatKerja`
+LEFT JOIN `ja_stesen` `d` ON `d`.`KodStesen`= `b`.`SubTempatKerja`
+LEFT JOIN `ja_panggilan` `e` ON `a`.`Panggil` = `e`.`Id`
+WHERE `b`.`Kategori` = :b.Kategori:
+AND `c`.`stat` = :c.stat:
+AND `d`.`status` = :d.status:
+AND   (
+`b`.`KodTempatKerja` = :b.KodTempatKerja:
+OR  `a`.`NoK` LIKE :a.NoK: ESCAPE \'!\'
+ )
+ORDER BY `a`.`Nama` ASC', [...], false)
+ 3 ROOTPATH\Modules\AdminDashboard\Models\User_m.php(211): CodeIgniter\Database\BaseBuilder->get()
+ 4 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(28): Modules\AdminDashboard\Models\User_m->inteam_get_user('18163')
+ 5 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 04:02:51 --> Call to a member function result() on array
+in ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 04:06:28 --> Call to a member function select() on null
+in ROOTPATH\Modules\AdminDashboard\Models\User_m.php on line 197.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(28): Modules\AdminDashboard\Models\User_m->inteam_get_user('18163')
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 04:07:37 --> Call to a member function select() on null
+in ROOTPATH\Modules\AdminDashboard\Models\User_m.php on line 197.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(28): Modules\AdminDashboard\Models\User_m->inteam_get_user('18163')
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-06 08:00:01 --> Undefined variable: data
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 38.
+ 1 APPPATH\Views\layouts\surat\surat_tawaran.php(38): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php', 38, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(39): view('layouts/surat/surat_tawaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

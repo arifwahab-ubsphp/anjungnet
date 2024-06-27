@@ -1,0 +1,15 @@
+CRITICAL - 2024-05-29 07:26:03 --> Class 'Modules\AdminDashboard\Controllers\MpdfLibrary' not found
+in ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->generatePdf()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-29 07:30:30 --> App\Libraries\MpdfLibrary::__construct(): Failed opening required 'C:\xampp\htdocs\PropertyPrime\app\libraries/mpdf/autoload.php' (include_path='C:\xampp\php\PEAR')
+in APPPATH\Libraries\MpdfLibrary.php on line 11.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-29 07:38:49 --> App\Libraries\MpdfLibrary::__construct(): Failed opening required 'C:\xampp\htdocs\PropertyPrime\app\libraries/mpdf/autoload.php' (include_path='C:\xampp\php\PEAR')
+in APPPATH\Libraries\MpdfLibrary.php on line 12.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-29 08:08:16 --> App\Libraries\MpdfLibrary::__construct(): Failed opening required 'C:\xampp\htdocs\PropertyPrime\app\Libraries/mpdf/Vendor/autoload.php' (include_path='C:\xampp\php\PEAR')
+in APPPATH\Libraries\MpdfLibrary.php on line 12.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

@@ -1,0 +1,52 @@
+CRITICAL - 2024-05-31 09:20:03 --> syntax error, unexpected '$db' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST)
+in APPPATH\Config\Database.php on line 48.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\PropertyPrime\\app\\Config\\Database.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('Config\\Database')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('Config\\Database')
+ 4 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(257): spl_autoload_call('Config\\Database')
+ 5 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(73): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 6 SYSTEMPATH\Debug\Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 7 SYSTEMPATH\Config\Services.php(779): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 8 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 9 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+10 SYSTEMPATH\Config\Services.php(774): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+11 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::toolbar()
+12 APPPATH\Config\Events.php(47): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+13 SYSTEMPATH\Events\Events.php(154): CodeIgniter\Events\Events::Config\{closure}()
+14 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\Events\Events::trigger('pre_system')
+15 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 09:21:32 --> Cannot redeclare Config\Database::$default
+in APPPATH\Config\Database.php on line 48.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-05-31 09:22:11 --> Invalid file: "pdf_template.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pdf_template.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('pdf_template', [], true)
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(27): view('pdf_template', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 09:23:09 --> Undefined property: CodeIgniter\View\View::$User_m
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 11.
+ 1 APPPATH\Views\layouts\surat\surat_tawaran.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\View\\View::$User_m', 'C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php', 11, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(27): view('layouts/surat/surat_tawaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 09:23:10 --> Undefined property: CodeIgniter\View\View::$User_m
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 11.
+ 1 APPPATH\Views\layouts\surat\surat_tawaran.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\View\\View::$User_m', 'C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php', 11, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(27): view('layouts/surat/surat_tawaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

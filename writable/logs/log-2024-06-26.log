@@ -1,0 +1,339 @@
+ERROR - 2024-06-26 02:10:16 --> mysqli_sql_exception: Table 'anjungnet.role' doesn't exist in C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\anjungnet\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\anjungnet\Modules\AdminDashboard\Models\Home_m.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\anjungnet\Modules\AdminDashboard\Controllers\Home_c.php(19): Modules\AdminDashboard\Models\Home_m->getUserProfile('18163')
+#6 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Home_c->index()
+#7 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Home_c))
+#8 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\anjungnet\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 02:10:16 --> Table 'anjungnet.role' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users` `a`
+LEFT JOIN `role` `b` ON `a`.`role` = `b`.`roleid`
+WHERE `a`.`NoK` = :a.NoK:', [...], false)
+ 2 ROOTPATH\Modules\AdminDashboard\Models\Home_m.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Home_c.php(19): Modules\AdminDashboard\Models\Home_m->getUserProfile('18163')
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Home_c->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Home_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 02:23:57 --> Class 'Modules\Dashboard\Models\User_m' not found
+in ROOTPATH\Modules\Dashboard\Controllers\Dashboard_c.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Dashboard_c->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Dashboard_c))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 02:40:21 --> Class 'Modules\Dashboard\Models\Dashboard_m' not found
+in ROOTPATH\Modules\Dashboard\Controllers\Dashboard_c.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Dashboard_c->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Dashboard_c))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 02:40:34 --> Invalid file: "Dashboard/index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Dashboard/index.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('Dashboard/index', [], true)
+ 3 ROOTPATH\Modules\Dashboard\Controllers\Dashboard_c.php(17): view('Dashboard/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Dashboard_c->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Dashboard_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-26 02:43:33 --> mysqli_sql_exception: Table 'anjungnet.role' doesn't exist in C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\anjungnet\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\anjungnet\Modules\AdminDashboard\Models\Home_m.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\anjungnet\Modules\AdminDashboard\Controllers\Home_c.php(19): Modules\AdminDashboard\Models\Home_m->getUserProfile('18163')
+#6 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Home_c->index()
+#7 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Home_c))
+#8 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\anjungnet\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 02:43:33 --> Table 'anjungnet.role' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users` `a`
+LEFT JOIN `role` `b` ON `a`.`role` = `b`.`roleid`
+WHERE `a`.`NoK` = :a.NoK:', [...], false)
+ 2 ROOTPATH\Modules\AdminDashboard\Models\Home_m.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Home_c.php(19): Modules\AdminDashboard\Models\Home_m->getUserProfile('18163')
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Home_c->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Home_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-26 03:46:32 --> Invalid file: "view_login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('view_login.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('view_login', [], true)
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Login_c.php(15): view('view_login')
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Login_c->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Login_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 04:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-26 04:49:09 --> mysqli_sql_exception: Table 'anjungnet.login' doesn't exist in C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\anjungnet\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('faris@mardi.gov...', '324234234')
+#6 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+#7 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+#8 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\anjungnet\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 04:49:09 --> Table 'anjungnet.login' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `login`
+WHERE `emel` = :emel:
+AND `katalaluan` = :katalaluan:', [...], false)
+ 2 ROOTPATH\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('faris@mardi.gov.my', '324234234')
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 04:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-26 04:50:56 --> mysqli_sql_exception: Table 'anjungnet.login' doesn't exist in C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\anjungnet\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('dsadas@gfsdfsd....', 'dsad')
+#6 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+#7 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+#8 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\anjungnet\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 04:50:56 --> Table 'anjungnet.login' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `login`
+WHERE `emel` = :emel:
+AND `katalaluan` = :katalaluan:', [...], false)
+ 2 ROOTPATH\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('dsadas@gfsdfsd.fdg', 'dsad')
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 06:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-26 06:53:52 --> mysqli_sql_exception: Table 'anjungnet.login' doesn't exist in C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\anjungnet\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('asfasd@adasd.cv...', 'asdasd')
+#6 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+#7 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+#8 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\anjungnet\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 06:53:52 --> Table 'anjungnet.login' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `login`
+WHERE `emel` = :emel:
+AND `katalaluan` = :katalaluan:', [...], false)
+ 2 ROOTPATH\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('asfasd@adasd.cvv', 'asdasd')
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 07:07:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-26 07:07:02 --> mysqli_sql_exception: Table 'anjungnet.login' doesn't exist in C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\anjungnet\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('890612435089', 'zaq12wsxcde3@12...')
+#6 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+#7 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+#8 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\anjungnet\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 07:07:02 --> Table 'anjungnet.login' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `login`
+WHERE `nokp` = :nokp:
+AND `katalaluan` = :katalaluan:', [...], false)
+ 2 ROOTPATH\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('890612435089', 'zaq12wsxcde3@123')
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 07:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-26 07:07:29 --> mysqli_sql_exception: Unknown column 'katalaluan' in 'where clause' in C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\anjungnet\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\anjungnet\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\anjungnet\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\anjungnet\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('890612435089', 'zaq12wsxcde3@12...')
+#6 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+#7 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+#8 C:\xampp\htdocs\anjungnet\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\anjungnet\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-26 07:07:29 --> Unknown column 'katalaluan' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `nokp` = :nokp:
+AND `katalaluan` = :katalaluan:', [...], false)
+ 2 ROOTPATH\Modules\Dashboard\Models\Login_m.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(42): Modules\Dashboard\Models\Login_m->getLoginInfo('890612435089', 'zaq12wsxcde3@123')
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 07:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 07:17:17 --> Invalid file: "view_login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('view_login.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('view_login', [], true)
+ 3 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(37): view('view_login', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 07:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 07:18:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 07:19:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 07:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 07:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:05:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 16:05:10 --> Invalid file: "view_login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('view_login.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('view_login', [], true)
+ 3 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(29): view('view_login', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 16:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:06:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:11:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:12:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 16:12:48 --> Call to undefined method Modules\Dashboard\Models\Login_m::_auth_user
+in SYSTEMPATH\Model.php on line 873.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(259): CodeIgniter\Model->__call('_auth_user', [...])
+ 2 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(100): Modules\Dashboard\Controllers\Login_c->authentication('890612435089')
+ 3 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 16:16:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 16:16:25 --> Too few arguments to function Modules\Dashboard\Models\Login_m::_auth_user(), 1 passed in C:\xampp\htdocs\anjungnet\Modules\Dashboard\Controllers\Login_c.php on line 259 and exactly 2 expected
+in ROOTPATH\Modules\Dashboard\Models\Login_m.php on line 25.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(259): Modules\Dashboard\Models\Login_m->_auth_user('890612435089')
+ 2 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(100): Modules\Dashboard\Controllers\Login_c->authentication('890612435089')
+ 3 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 16:17:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 16:17:36 --> Undefined property: mysqli::$id
+in ROOTPATH\Modules\Dashboard\Controllers\Login_c.php on line 263.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(263): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: mysqli::$id', 'C:\\xampp\\htdocs\\anjungnet\\Modules\\Dashboard\\Controllers\\Login_c.php', 263, [...])
+ 2 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(100): Modules\Dashboard\Controllers\Login_c->authentication('890612435089')
+ 3 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 16:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:20:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 16:20:55 --> Undefined property: mysqli::$id
+in ROOTPATH\Modules\Dashboard\Controllers\Login_c.php on line 266.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(266): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: mysqli::$id', 'C:\\xampp\\htdocs\\anjungnet\\Modules\\Dashboard\\Controllers\\Login_c.php', 266, [...])
+ 2 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(100): Modules\Dashboard\Controllers\Login_c->authentication('890612435089')
+ 3 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 16:20:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 16:23:09 --> Call to undefined method Modules\Dashboard\Models\Login_m::_auth_company
+in SYSTEMPATH\Model.php on line 873.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(109): CodeIgniter\Model->__call('_auth_company', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 16:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:44:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 16:44:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 17:03:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 17:03:00 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::where()
+in ROOTPATH\Modules\Dashboard\Models\Login_m.php on line 37.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(266): Modules\Dashboard\Models\Login_m->_update_user('1', [...])
+ 2 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(100): Modules\Dashboard\Controllers\Login_c->authentication('890612435089')
+ 3 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 17:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 17:04:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-26 17:04:42 --> Call to undefined method Modules\Dashboard\Models\Login_m::_update_user
+in SYSTEMPATH\Model.php on line 873.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(266): CodeIgniter\Model->__call('_update_user', [...])
+ 2 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(100): Modules\Dashboard\Controllers\Login_c->authentication('890612435089')
+ 3 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-26 17:05:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-26 17:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,48 @@
+CRITICAL - 2024-05-24 08:39:17 --> Invalid file: "AdminLayout/main_layout.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('AdminLayout/main_layout.php')
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('AdminLayout/main_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('property/index', [], true)
+ 4 APPPATH\Controllers\Property.php(13): view('property/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Property->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Property))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:40:01 --> syntax error, unexpected '?>'
+in APPPATH\Views\layouts\main_layout.php on line 8.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layouts/main_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('property/index', [], true)
+ 4 APPPATH\Controllers\Property.php(13): view('property/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Property->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Property))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:40:44 --> Invalid file: "layouts/navbar.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/navbar.php')
+ 2 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('layouts/navbar', null, true)
+ 3 APPPATH\Views\layouts\main_layout.php(5): CodeIgniter\View\View->include('layouts/navbar')
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\main_layout.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layouts/main_layout', [], true)
+ 7 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('property/index', [], true)
+ 8 APPPATH\Controllers\Property.php(13): view('property/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Property->index()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Property))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-24 08:41:05 --> Invalid file: "layouts/sidebar_layouts.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/sidebar_layouts.php')
+ 2 SYSTEMPATH\View\View.php(469): CodeIgniter\View\View->render('layouts/sidebar_layouts', null, true)
+ 3 APPPATH\Views\layouts\main_layout.php(6): CodeIgniter\View\View->include('layouts/sidebar_layouts')
+ 4 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\main_layout.php')
+ 5 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('layouts/main_layout', [], true)
+ 7 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('property/index', [], true)
+ 8 APPPATH\Controllers\Property.php(13): view('property/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Property->index()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Property))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,101 @@
+CRITICAL - 2024-06-07 02:46:01 --> Undefined index: NPusat
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 64.
+ 1 APPPATH\Views\layouts\surat\surat_tawaran.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: NPusat', 'C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php', 64, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(39): view('layouts/surat/surat_tawaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 02:47:31 --> Trying to get property 'NPusat' of non-object
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 64.
+ 1 APPPATH\Views\layouts\surat\surat_tawaran.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'NPusat\' of non-object', 'C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php', 64, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(39): view('layouts/surat/surat_tawaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 02:51:40 --> syntax error, unexpected '<'
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 66.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(39): view('layouts/surat/surat_tawaran', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 02:53:10 --> Object of class stdClass could not be converted to string
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 66.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 4 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(39): view('layouts/surat/surat_tawaran', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 02:57:40 --> syntax error, unexpected end of file
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 213.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(41): view('layouts/surat/surat_tawaran', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 02:58:18 --> syntax error, unexpected end of file
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 213.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(41): view('layouts/surat/surat_tawaran', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 02:59:55 --> syntax error, unexpected end of file
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 213.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(41): view('layouts/surat/surat_tawaran', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 03:03:08 --> Undefined property: stdClass::$nok
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 67.
+ 1 APPPATH\Views\layouts\surat\surat_tawaran.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$nok', 'C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php', 67, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(41): view('layouts/surat/surat_tawaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 03:25:06 --> Undefined variable: tp_Name
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 170.
+ 1 APPPATH\Views\layouts\surat\surat_tawaran.php(170): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: tp_Name', 'C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php', 170, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(41): view('layouts/surat/surat_tawaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-07 03:33:03 --> Undefined variable: section
+in APPPATH\Views\layouts\surat\surat_tawaran.php on line 27.
+ 1 APPPATH\Views\layouts\surat\surat_tawaran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: section', 'C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\PropertyPrime\\app\\Views\\layouts\\surat\\surat_tawaran.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('layouts/surat/surat_tawaran', [], true)
+ 5 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(46): view('layouts/surat/surat_tawaran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->gen_tawaran()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

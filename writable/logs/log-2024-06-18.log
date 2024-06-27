@@ -1,0 +1,47 @@
+CRITICAL - 2024-06-18 06:47:26 --> syntax error, unexpected '}'
+in ROOTPATH\Modules\AdminDashboard\Config\Routes.php on line 8.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 06:48:56 --> syntax error, unexpected '}'
+in ROOTPATH\Modules\Dashboard\Config\Routes.php on line 8.
+ 1 SYSTEMPATH\Router\RouteCollection.php(344): require()
+ 2 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-18 07:10:09 --> mysqli_sql_exception: Table 'property_prime.application_registration_status' doesn't exist in C:\xampp\htdocs\PropertyPrime\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\PropertyPrime\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\PropertyPrime\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\PropertyPrime\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\PropertyPrime\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PropertyPrime\Modules\AdminDashboard\Models\Property_m.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PropertyPrime\Modules\AdminDashboard\Controllers\Property_c.php(15): Modules\AdminDashboard\Models\Property_m->getAll()
+#6 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->index()
+#7 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+#8 C:\xampp\htdocs\PropertyPrime\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PropertyPrime\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-18 07:10:09 --> Table 'property_prime.application_registration_status' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `properties`
+LEFT JOIN `application_registration_status` ON `application_registration_status`.`app_reg_status_id` = `application_registration`.`app_reg_status_id`
+LEFT JOIN `application_payment_status` ON `application_payment_status`.`payment_id` = `application_registration`.`payment_status_id`
+LEFT JOIN `event_info` ON `event_info`.`event_id` = `application_registration`.`event_id`', [], false)
+ 2 ROOTPATH\Modules\AdminDashboard\Models\Property_m.php(17): CodeIgniter\Database\BaseBuilder->get()
+ 3 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(15): Modules\AdminDashboard\Models\Property_m->getAll()
+ 4 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 08:25:58 --> Call to undefined method Modules\AdminDashboard\Models\Property_m::inteam_get_user
+in SYSTEMPATH\Model.php on line 873.
+ 1 ROOTPATH\Modules\AdminDashboard\Controllers\Property_c.php(15): CodeIgniter\Model->__call('inteam_get_user', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\AdminDashboard\Controllers\Property_c->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\AdminDashboard\Controllers\Property_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
