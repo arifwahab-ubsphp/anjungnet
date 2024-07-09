@@ -22,7 +22,7 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h3>List of '<?= $bannerTitle ?>' Image Item</h3>
-                                    <a href="<?= base_url() ?>admin-dashboard/banner-item/create"
+                                    <a href="<?= base_url('admin-dashboard/banner-item/create/' . $bannerId->id) ?>"
                                         class="btn btn-primary">Create</a>
                                 </div>
                                 <table class="table table-hover">
@@ -42,15 +42,15 @@
                                             <td><?= $row->item_title ?></td>
                                             <td><?= $row->item_description ?></td>
                                             <td>
-                                                <a href="<?= base_url('admin-dashboard/banner/more/' . $row->id) ?>"
+                                                <!-- <a href="<?= base_url('admin-dashboard/banner/more/' . $row->id) ?>"
                                                     class="btn btn-secondary btn-sm" title="More">
                                                     <i class="bx bx-arrow-to-right"></i>
-                                                </a>
-                                                <a href="<?= base_url('admin-dashboard/banner/edit/' . $row->id) ?>"
+                                                </a> -->
+                                                <a href="<?= base_url('admin-dashboard/banner-item/edit/' . $row->id) ?>"
                                                     class="btn btn-primary btn-sm" title="Edit">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="<?= base_url('admin-dashboard/banner/delete/' . $row->id) ?>"
+                                                <a href="<?= base_url('admin-dashboard/banner-item/delete/' . $row->id) ?>"
                                                     class="btn btn-danger btn-sm" title="Delete">
                                                     <i class="bx bx-trash"></i>
                                                 </a>

@@ -21,8 +21,11 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
    $routes->get('banner/delete/(:num)', 'Banner_c::bannerDelete/$1');
 
    $routes->get('banner-item/(:num)', 'Banner_Item_c::index/$1');
-   $routes->get('banner-item/create', 'Banner_Item_c::create');
+   $routes->get('banner-item/create/(:num)', 'Banner_Item_c::create/$1');
    $routes->post('banner-item-store', 'Banner_Item_c::bannerItemStore');
+   $routes->get('banner-item/edit/(:num)', 'Banner_Item_c::bannerItemEdit/$1');
+   $routes->post('banner-item/update/(:num)', 'Banner_Item_c::bannerItemUpdate/$1');
+   $routes->get('banner-item/delete/(:num)', 'Banner_Item_c::bannerItemDelete/$1');
 
 
 
