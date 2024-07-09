@@ -72,6 +72,12 @@
                         <div data-i18n="Basic">Banner</div>
                     </a>
                 </li>
+                <li class="menu-item <?= isActive('admin-dashboard/sso'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/sso" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-lock-open'></i>
+                        <div data-i18n="Basic">Single-Sign-On</div>
+                    </a>
+                </li>
 
                 <!-- Misc -->
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Laporan</span></li>
