@@ -10,7 +10,7 @@ class Dashboard_c extends BaseController
 {
     public function index()
     {        
-        $nok = "18163";
+        $nok = "19379";
         $userModel = new Dashboard_m();
         $data['userlist'] = $userModel->inteam_get_user($nok);
         

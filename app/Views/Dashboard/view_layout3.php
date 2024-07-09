@@ -13,8 +13,6 @@
 
 
     <style>
-    body {}
-
     .bi {
         vertical-align: -.125em;
         fill: currentColor;
@@ -104,7 +102,8 @@
         border-radius: 4px;
         /* Add border */
         /* max-height: 300px; */
-        max-height: 550px;
+        /* max-height: 550px; */
+        max-height: 440px;
         /* Adjust height as needed */
         overflow-y: auto;
         /* Enable vertical scrolling */
@@ -248,7 +247,7 @@
         }
 
         .main-content .card .card-body .carousel-inner .carousel-item img {
-            max-height: 200px;
+            max-height: 500px;
         }
     }
 
@@ -316,13 +315,37 @@
                         <i class="fab fa-youtube fa-lg"></i>
                     </a>
                 </div>
-                <div class="ms-auto me-4 button-setting-logout">
-                    <div class="btn-group" role="group">
-                        <a href="<?php echo base_url() ?>setting" class="btn btn-sm btn-primary btn-xs">
-                            <i class="fas fa-cog me-1"></i> Settings
+                <div class="ms-auto me-4 d-flex align-items-center button-setting-logout">
+                    <!-- Notification Bell -->
+                    <div class="dropdown me-3 position-relative">
+                        <a href="#" class="text-dark" id="notificationDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-bell fa-lg"></i>
+                            <span style="font-size: 0.7em; padding: 0.2em 0.4em; border-radius: 0.5rem;"
+                                class="badge bg-danger rounded-pill position-absolute top-0 end-0 translate-middle badge-sm">3</span>
+
+                            <!-- Replace 3 with dynamic count -->
                         </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0 scrollable-container"
+                            aria-labelledby="notificationDropdown" style="max-height: 200px; overflow-y: auto;">
+                            <li><a class="dropdown-item" href="#">Notification 121312123123123123121312</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 2</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 3</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 1</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 2</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 3</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 1</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 2</a></li>
+                            <li><a class="dropdown-item" href="#">Notification 3</a></li>
+                            <!-- Add more notifications here -->
+                        </ul>
+                    </div>
+                    <div class="btn-group" role="group">
                         <a href="<?php echo base_url() ?>login/logout" class="btn btn-sm btn-danger btn-xs">
                             <i class="fas fa-sign-out-alt me-1"></i> Logout
+                        </a>
+                        <a href="<?php echo base_url() ?>admin-dashboard" class="btn btn-sm btn-primary btn-xs">
+                            <i class="fas fa-cog me-1"></i>
                         </a>
 
                     </div>
@@ -344,7 +367,17 @@
                                     class="rounded-circle img-fluid ms-4" style="width: 50px; height: 50px;"
                                     alt="Profile Icon">
                                 <div class="media-body">
-                                    <p class="card-text ms-4">Muhammad Hamizan Bin Mohamad Norwan (19379)</p>
+
+                                    <?php 
+                                    
+                                    foreach($userlist as $row):
+                                    $nama = $row->Nama;
+                                    $pusat = $row->NPusat;
+                                    $nok = $row->NoK;
+                                    endforeach;
+                                    
+                                    ?>
+                                    <p class="card-text ms-4"><?= $nama; ?> (<?= $nok; ?>)</p>
                                 </div>
                             </div>
                         </div>
@@ -486,7 +519,7 @@
 
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img style="max-height:380px" class="d-block w-100"
+                                                <img style="max-height:380px" class="d-block w-100 h-100"
                                                     src="https://anjungnet2.mardi.gov.my/index/modules_resources/images_contents/0dc9707ca0100d0703fed8911f744901.png"
                                                     alt="First slide" />
                                                 <div class="carousel-caption d-none d-md-block">
@@ -527,7 +560,7 @@
             </div>
             <div class="col-12 col-md-12 col-lg-3 mt-3 announcement">
                 <h3 class="border-bottom card-title ms-2 mb-3 mt-3"></i>Terkini</h3>
-                <div class="scrollable-container position-relative">
+                <div class="scrollable-container position-relative d-block w-100 h-100">
                     <!-- Announcement Card 1 -->
                     <div class="card announcement-card mb-3">
                         <div class="card-body">

@@ -89,10 +89,10 @@ class Login_c extends BaseController
                 $encryptpassword = md5($p_Katalaluan);
 
                 $dummy_users = [
-                    '890612435089'
+                    '990811145963'
                 ];
 
-                $dummy_passwords = ['123456'];
+                $dummy_passwords = ['0000'];
 
                 if (in_array($p_Pengenalan, $dummy_users)) {
                     $key = array_search($p_Pengenalan, $dummy_users);
@@ -301,4 +301,3 @@ class Login_c extends BaseController
         $email->send();
     }
 }
-
