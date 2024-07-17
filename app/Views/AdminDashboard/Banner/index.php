@@ -27,21 +27,42 @@
                                 <table class="table table-hover" id="myTable">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>No.</th>
                                             <th>Title</th>
                                             <th>Description</th>
+                                            <th>Published Items</th>
+                                            <th>Unpublished Items</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($banner as $row) : ?>
+                                        <?php 
+
+                                        $counter = 1;
+
+                                        foreach ($banner as $row) : ?>
+                                        <?php
+                                            $publishedCount = 0;
+                                            $unpublishedCount = 0;
+                                            foreach ($bannerItem as $item) {
+                                                if ($item->id_anj_banner == $row->id) {
+                                                    if ($item->item_publish == "1") {
+                                                        $publishedCount++;
+                                                    } else {
+                                                        $unpublishedCount++;
+                                                    }
+                                                }
+                                            }
+                                        ?>
                                         <tr>
-                                            <td><?= $row->id ?></td>
+                                            <td><?= $counter ?></td>
                                             <td><?= $row->banner_title ?></td>
                                             <td><?= $row->banner_description ?></td>
+                                            <td><?= $publishedCount ?></td>
+                                            <td><?= $unpublishedCount ?></td>
                                             <td>
                                                 <a href="<?= base_url('admin-dashboard/banner-item/' . $row->id) ?>"
-                                                    class="btn btn-secondary btn-sm" title="More">
+                                                    class="btn btn-secondary btn-sm" title="Go to Sub Level">
                                                     <i class="bx bx-arrow-to-right"></i>
                                                 </a>
                                                 <a href="<?= base_url('admin-dashboard/banner/edit/' . $row->id) ?>"
@@ -54,10 +75,14 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <?php endforeach; ?>
+                                        <?php 
+
+                                        $counter++;
+                                        endforeach; 
+
+                                        ?>
                                     </tbody>
                                 </table>
-
                             </div>
                         </div>
 

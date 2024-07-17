@@ -2,6 +2,7 @@
 namespace Modules\AdminDashboard\Controllers;
 
 use App\Controllers\BaseController;
+use Modules\AdminDashboard\Models\Banner_Item_m;
 use Modules\AdminDashboard\Models\Banner_m;
 use App\Libraries\MpdfLibrary;
 use CodeIgniter\HTTP\Response;
@@ -15,9 +16,13 @@ class Banner_c extends BaseController
     {
         $anjungBanner = new Banner_m();
         $data['banner'] = $anjungBanner->findAll();
+
+        $anjungBannerItem = new Banner_Item_m();
+        $data['bannerItem'] = $anjungBannerItem->findAll();
         return view('AdminDashboard/Banner/index', $data);
     }
-    
+
+
     public function create()
     {
         return view('AdminDashboard/Banner/create_banner');

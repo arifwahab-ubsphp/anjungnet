@@ -8,13 +8,20 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
-                <?php 
-                    if (session()->getFlashdata('status')) {
-                        echo '<div class="alert alert-success" role="alert">';
-                        echo session()->getFlashdata('status');
-                        echo '</div>';
-                    }
-                ?>
+                <?php if (session()->has('status')): ?>
+                <div class="alert alert-success">
+                    <?= session('status') ?>
+                </div>
+                <?php elseif (session()->has('error')): ?>
+                <div class="alert alert-danger">
+                    <?= session('error') ?>
+                </div>
+                <?php endif; ?>
+                <?php if (session()->has('validation')): ?>
+                <div class="alert alert-danger">
+                    <?= session('validation')->listErrors() ?>
+                </div>
+                <?php endif; ?>
                 <div class="card">
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-12">
@@ -25,27 +32,26 @@
                                     <a href="<?= base_url('admin-dashboard/banner-item/create/' . $bannerId->id) ?>"
                                         class="btn btn-primary">Create</a>
                                 </div>
-                                <table class="table table-hover">
+                                <table class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
+                                            <th>No.</th>
                                             <th>Title</th>
                                             <th>Description</th>
                                             <th>Action</th>
+                                            <th>Publish Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php if (!empty($bannerItem)): ?>
-                                        <?php foreach ($bannerItem as $row) : ?>
+                                        <?php 
+                                            $counter = 1;
+                                            foreach ($bannerItem as $row) : ?>
                                         <tr>
-                                            <td><?= $row->id ?></td>
+                                            <td><?= $counter ?></td>
                                             <td><?= $row->item_title ?></td>
                                             <td><?= $row->item_description ?></td>
                                             <td>
-                                                <!-- <a href="<?= base_url('admin-dashboard/banner/more/' . $row->id) ?>"
-                                                    class="btn btn-secondary btn-sm" title="More">
-                                                    <i class="bx bx-arrow-to-right"></i>
-                                                </a> -->
                                                 <a href="<?= base_url('admin-dashboard/banner-item/edit/' . $row->id) ?>"
                                                     class="btn btn-primary btn-sm" title="Edit">
                                                     <i class="bx bx-edit"></i>
@@ -55,11 +61,19 @@
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
+                                            <td class="text-center">
+                                                <div class="form-check form-switch form-switch-md">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        onchange="location.href='<?= base_url('admin-dashboard/banner-item/toggle-status/' . $row->id) ?>'"
+                                                        <?= $row->item_publish == 1 ? 'checked' : '' ?>>
+                                                </div>
+                                            </td>
                                         </tr>
-                                        <?php endforeach; ?>
+                                        <?php 
+                                            $counter++; endforeach; ?>
                                         <?php else: ?>
                                         <tr>
-                                            <td colspan="4">No banner items found.</td>
+                                            <td colspan="5">No banner items found.</td>
                                         </tr>
                                         <?php endif; ?>
 

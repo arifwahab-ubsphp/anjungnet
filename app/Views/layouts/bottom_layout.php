@@ -8,6 +8,8 @@
     <?= script_tag(base_url("assets/vendors/sneats/vendor/libs/jquery/jquery.js")) ?>
     <?= script_tag(base_url("assets/vendors/sneats/vendor/libs/popper/popper.js")) ?>
     <?= script_tag(base_url("assets/vendors/sneats/vendor/js/bootstrap.js")) ?>
+    <?= script_tag(base_url("assets/vendors/sneats/vendor/js/datatables.js")) ?>
+    <?= script_tag(base_url("assets/vendors/sneats/vendor/js/datatables.min.js")) ?>
     <?= script_tag(base_url("assets/vendors/sneats/vendor/libs/perfect-scrollbar/perfect-scrollbar.js")) ?>
 
     <!-- <script src="../assets/vendor/js/menu.js"></script> -->
@@ -19,6 +21,14 @@
     <!-- Main JS -->
     <!-- <script src="../assets/js/main.js"></script> -->
     <?= script_tag(base_url("assets/vendors/sneats/js/main.js")) ?>
+
+    <script>
+$(document).ready(function() {
+    $('.table').DataTable();
+
+});
+    </script>
+
 
     <!-- Page JS -->
 

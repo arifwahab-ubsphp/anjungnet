@@ -37,6 +37,10 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
    $routes->get('sso/delete/(:num)', 'SSO_c::ssoDelete/$1');
 
 
+   $routes->get('menu', 'Menu_c::index');
+   $routes->post('menu-store', 'Menu_c::menuStore');
+
+
 
 
 });

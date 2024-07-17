@@ -53,8 +53,8 @@
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Tetapan</span></li>
                 <!-- Cards -->
 
-                <li class="menu-item <?= isActive('cards-basic.html'); ?>">
-                    <a href="<?php echo base_url(''); ?>" class="menu-link">
+                <li class="menu-item <?= isActive('admin-dashboard/menu'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/menu" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-menu-alt-left"></i>
                         <div data-i18n="Basic">Menu</div>
                     </a>

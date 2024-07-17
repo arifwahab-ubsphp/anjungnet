@@ -29,6 +29,8 @@
     <!-- <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/css/demo.css" /> -->
     <?= link_tag(base_url("assets/vendors/sneats/vendor/css/core.css")) ?>
+    <?= link_tag(base_url("assets/vendors/sneats/vendor/css/datatables.css")) ?>
+    <?= link_tag(base_url("assets/vendors/sneats/vendor/css/datatables.min.css")) ?>
     <?= link_tag(base_url("assets/vendors/sneats/vendor/css/theme-default.css")) ?>
     <?= link_tag(base_url("assets/vendors/sneats/css/demo.css")) ?>
 
