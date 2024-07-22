@@ -51,8 +51,8 @@
                                                     class="btn btn-danger btn-sm" title="Delete Application">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-warning btn-sm"
-                                                    title="Application Attributes">
+                                                <a href="<?= base_url('admin-dashboard/sso/attribute/' . $row->id) ?>"
+                                                    class="btn btn-warning btn-sm" title="Application Attributes">
                                                     <i class="bx bx-cog"></i>
                                                 </a>
                                                 <a href="<?= base_url('admin-dashboard/sso/login/' . $row->id) ?>"

@@ -85,4 +85,24 @@ class SSO_c extends BaseController
             echo "SSO application not found.";
         }
     }
+
+    public function ssoAttribute($id)
+    {
+        $anjungSSO = new SSO_m();
+        $data['sso'] = $anjungSSO->find($id);
+        return view('AdminDashboard/SSO/edit_attribute_sso', $data);
+    }
+
+    public function ssoUpdateAttribute($id)
+    {
+        $anjungSSO = new SSO_m();
+        $data = [
+            'att_name' => $this->request->getPost('att_name'),
+            'att_password' => $this->request->getPost('att_password'),
+            'att_submit' => $this->request->getPost('att_submit'),
+        ];
+        $anjungSSO->update($id, $data);
+        return redirect()->to(base_url('admin-dashboard/sso'))->with('status', 'SSO Attribute Updated Successfully');
+    }
+
 }
