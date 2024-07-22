@@ -12,7 +12,7 @@ class SSO_m extends Model
     protected $useSoftDeletes = false;
     
     protected $allowedFields = [
-        'app_name', 'form_name', 'login_url', 'login_action_url', 'submit_type', 'app_status'
+        'app_name', 'form_name', 'login_url', 'login_action_url', 'submit_type', 'app_status', 'att_name', 'att_password', 'att_submit'
     ];
 
     protected $anjungDB;

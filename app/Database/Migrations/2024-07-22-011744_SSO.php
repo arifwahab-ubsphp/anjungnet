@@ -39,6 +39,18 @@ class SSO extends Migration
                 'type' => 'INT',
                 'constraint'     => 1,
             ],
+            'att_name'         => [
+                'type'       => 'VARCHAR',
+                'constraint' => 100,
+            ],
+            'att_password'         => [
+                'type'       => 'VARCHAR',
+                'constraint' => 100,
+            ],
+            'att_submit'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => 100,
+            ],
             'created_at' => [
                 'type'           => 'DATETIME',
             ],

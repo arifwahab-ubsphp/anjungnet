@@ -21,37 +21,49 @@
 
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h3>Single-Sign-On</h3>
-                                    <a href="<?= base_url() ?>admin-dashboard/sso/create"
-                                        class="btn btn-primary">Create</a>
+                                    <h3>SSO Applications</h3>
+                                    <a href="<?= base_url() ?>admin-dashboard/sso/create" class="btn btn-primary">Create
+                                        New Application</a>
                                 </div>
                                 <table class="table table-hover" id="myTable">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Title</th>
-                                            <th>Description</th>
+                                            <th>No.</th>
+                                            <th>Name</th>
+                                            <th>Login URL</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($ssoList as $row) : ?>
+                                        <?php 
+                                        $count = 1;
+                                        foreach ($ssoList as $row) : ?>
                                         <tr>
-                                            <td><?= $row->id ?></td>
+                                            <td><?= $count ?></td>
                                             <td><?= $row->app_name ?></td>
                                             <td><?= $row->login_url ?></td>
                                             <td>
                                                 <a href="<?= base_url('admin-dashboard/sso/edit/' . $row->id) ?>"
-                                                    class="btn btn-primary btn-sm" title="Edit">
+                                                    class="btn btn-primary btn-sm" title="Edit Application">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
                                                 <a href="<?= base_url('admin-dashboard/sso/delete/' . $row->id) ?>"
-                                                    class="btn btn-danger btn-sm" title="Delete">
+                                                    class="btn btn-danger btn-sm" title="Delete Application">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
+                                                <a href="#" class="btn btn-warning btn-sm"
+                                                    title="Application Attributes">
+                                                    <i class="bx bx-cog"></i>
+                                                </a>
+                                                <a href="<?= base_url('admin-dashboard/sso/login/' . $row->id) ?>"
+                                                    class="btn btn-success btn-sm" title="Login" target="_blank">
+                                                    <i class="bx bx-log-in"></i>
+                                                </a>
+
                                             </td>
                                         </tr>
-                                        <?php endforeach; ?>
+                                        <?php 
+                                        $count++; endforeach; ?>
                                     </tbody>
                                 </table>
 

@@ -35,6 +35,8 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
    $routes->get('sso/edit/(:num)', 'SSO_c::ssoEdit/$1');
    $routes->post('sso/update/(:num)', 'SSO_c::ssoUpdate/$1');
    $routes->get('sso/delete/(:num)', 'SSO_c::ssoDelete/$1');
+   $routes->get('sso/login/(:num)', 'SSO_c::ssoLogin/$1');
+
 
 
    $routes->get('menu', 'Menu_c::index');
