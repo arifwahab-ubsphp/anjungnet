@@ -1,36 +1,45 @@
 <div class="layout-wrapper layout-content-navbar">
-  <div class="layout-container">
-    <!-- Menu -->
+    <div class="layout-container">
+        <!-- Menu -->
 
-    <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-      <div class="app-brand demo" align="center" style="height: 130px">
-        <a href="index.html" class="app-brand-link" style="display: block; margin-left: auto; margin-right: auto;">          
-          <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2"></span> -->
-          <img src="<?php echo base_url('assets/images/mardi.png') ?>" style="width: 60%; height: 100%">
-        </a>
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+            <div class="app-brand demo" align="center" style="height: 130px">
+                <a href="index.html" class="app-brand-link"
+                    style="display: block; margin-left: auto; margin-right: auto;">
+                    <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2"></span> -->
+                    <img src="<?php echo base_url('assets/images/mardi.png') ?>" style="width: 60%; height: 100%">
+                </a>
 
-        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-          <i class="bx bx-chevron-left bx-sm align-middle"></i>
-        </a>
-      </div>
+                <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                    <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                </a>
+            </div>
 
-      <div class="menu-inner-shadow"></div>
+            <?php
+                function isActive($uriSegment) {
+                    $currentUrl = current_url();
+                    return strpos($currentUrl, $uriSegment) !== false ? 'active' : '';
+                }
+                ?>
 
-      <ul class="menu-inner py-1">
-        <!-- Dashboard -->
-        <li class="menu-item">
-          <a href="index.html" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-            <div data-i18n="Analytics">Dashboard</div>
-          </a>
-        </li>
 
-        <!-- Layouts -->
-        <li class="menu-item">
-          <a href="#" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bxs-user"></i>
-            <div data-i18n="Layouts">Pengguna</div>            
-          </a>
+            <div class="menu-inner-shadow"></div>
+
+            <ul class="menu-inner py-1">
+                <!-- Dashboard -->
+                <li class="menu-item <?= isActive('admin-dashboard/home'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/home" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                        <div data-i18n="Analytics">Dashboard</div>
+                    </a>
+                </li>
+
+                <!-- Layouts -->
+                <li class="menu-item <?= isActive('cards-basic.html'); ?>">
+                    <a href="#" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons bx bxs-user"></i>
+                        <div data-i18n="Layouts">Pengguna</div>
+                    </a>
 
                     <ul class="menu-sub <?= isActive('cards-basic.html'); ?>">
                         <li class="menu-item">
@@ -180,14 +189,14 @@
                 </div>
             </nav>
 
-      <!-- / Navbar -->
+            <!-- / Navbar -->
 
-      <?= $this->renderSection('content-wrapper') ?>
+            <?= $this->renderSection('content-wrapper') ?>
+        </div>
+        <!-- / Layout page -->
     </div>
-    <!-- / Layout page -->
-  </div>
 
-  <!-- Overlay -->
-  <div class="layout-overlay layout-menu-toggle"></div>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
 </div>
 <!-- / Layout wrapper -->
