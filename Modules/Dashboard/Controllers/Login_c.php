@@ -4,6 +4,7 @@ namespace Modules\Dashboard\Controllers;
 
 use App\Controllers\BaseController;
 use Modules\Dashboard\Models\Login_m;
+use Modules\AdminDashboard\Models\Home_m;
 use CodeIgniter\HTTP\Response;
 
 // use App\Models\LoginAuthModel;
@@ -88,22 +89,22 @@ class Login_c extends BaseController
                 $p_Katalaluan = trim($this->request->getPost('katalaluan'));
                 $encryptpassword = md5($p_Katalaluan);
 
-                $dummy_users = [
-                    '990811145963'
-                ];
+                // $dummy_users = [
+                //     '890612435089'
+                // ];
 
-                $dummy_passwords = ['0000'];
+                // $dummy_passwords = ['123456'];
 
-                if (in_array($p_Pengenalan, $dummy_users)) {
-                    $key = array_search($p_Pengenalan, $dummy_users);
-                    if ($dummy_passwords[$key] == $p_Katalaluan) {                        
-                        return $this->authentication($p_Pengenalan);
-                    }
-                    else{
-                        session()->setFlashdata('Mesej', "Kad Pengenalan atau Kata Laluan Yang Dimasukkan Tidak Betul. Sila cuba lagi");
-                        return redirect()->to('login');
-                    }
-                }
+                // if (in_array($p_Pengenalan, $dummy_users)) {
+                //     $key = array_search($p_Pengenalan, $dummy_users);
+                //     if ($dummy_passwords[$key] == $p_Katalaluan) {                        
+                //         return $this->authentication($p_Pengenalan);
+                //     }
+                //     else{
+                //         session()->setFlashdata('Mesej', "Kad Pengenalan atau Kata Laluan Yang Dimasukkan Tidak Betul. Sila cuba lagi");
+                //         return redirect()->to('login');
+                //     }
+                // }
 
                 if ($validation->withRequest($this->request)->run()) {
 
@@ -150,6 +151,7 @@ class Login_c extends BaseController
                                     session()->setFlashdata('msj', "ID Pengenalan Atau Kata Laluan Tidak Sah");
                                     return redirect()->to('login');
                                 } elseif ($r === true) {
+                                    // echo "<pre>"; print_r($info[0]); exit();
                                     $noK = $info[0]["employeenumber"][0];
                                     $mail = $info[0]["mail"][0] ?? "";
                                     $cn_name = $info[0]["cn"][0];
@@ -160,31 +162,30 @@ class Login_c extends BaseController
                                     $kod_program = $info[0]["Program"][0] ?? "";
 
                                     // Semak Kakitangan dalam t_user
-                                    $result = $this->loginAuthModel->_auth_user($username);
+                                    $result = $this->loginAuthModel->authUser($username);
 
                                     if ($result) { // Wujud dalam t_user
-                                        $result_inteam = $this->loginAuthModel->_auth_inteam($noK); // Semak INTEAM
-
+                                        // dd($noK);
+                                        $result_inteam = $this->loginAuthModel->authInteam($noK); // Semak INTEAM
+                                        // dd($result_inteam);
                                         if ($result_inteam) { // Staf Tetap
                                             foreach ($result_inteam as $row) {
                                                 $nama = $row->nama;
-                                                $emel = $row->email;
-                                                $telpejabat = $row->TelPejabat;
-                                                $telbimbit = $row->TelBimbit;
-                                                $ptj = $row->KodPusat;
-                                                $jawatan = $row->namajawatan;
+                                                $emel = $row->emel;
+                                                // $telpejabat = $row->telpejabat;
+                                                // $telbimbit = $row->telbimbit;
+                                                $ptj = $row->kodpusat;
+                                                // $jawatan = $row->gelaranjawatan;
                                             }
 
                                             $salt = substr(md5(time()), 0, 6);
                                             $data_update = [
-                                                'usr_password' => md5($password . $salt),
-                                                'usr_salt' => $salt,
-                                                'usr_name' => $nama,
-                                                'usr_email' => $mail,
-                                                'usr_phone_office' => $telpejabat,
-                                                'usr_phone_mobile' => $telbimbit,
-                                                'usr_position' => strtoupper($jawatan),
-                                                'usr_lastlogin' => date('Y-m-d H:i:s'),
+                                                'user_pwd' => md5($password . $salt),
+                                                'user_salt' => $salt,
+                                                'fname' => $nama,
+                                                'email' => $emel,                                                
+                                                // 'usr_position' => strtoupper($jawatan),
+                                                'lastlogin' => date('Y-m-d H:i:s'),
                                                 'nok' => $noK,
                                                 'ptj' => $ptj,
                                             ];
@@ -193,13 +194,14 @@ class Login_c extends BaseController
                                         } else { // Staf Kontrak
                                             $salt = substr(md5(time()), 0, 6);
                                             $data_update = [
-                                                'usr_password' => md5($password . $salt),
-                                                'usr_salt' => $salt,
-                                                'usr_name' => $cn_name,
-                                                'usr_email' => $mail,
+                                                'user_pwd' => md5($password . $salt),
+                                                'user_salt' => $salt,
+                                                'fname' => $cn_name,
+                                                'email' => $mail,                                                
+                                                // 'usr_position' => strtoupper($jawatan),
+                                                'lastlogin' => date('Y-m-d H:i:s'),
                                                 'nok' => $noK,
                                                 'ptj' => $ptj,
-                                                'usr_position' => $jawatan
                                             ];
 
                                             $this->loginAuthModel->_update_user($username, $data_update);
@@ -230,10 +232,14 @@ class Login_c extends BaseController
 
     public function authentication($no_ic)
     {
-        $result = $this->loginAuthModel->_auth_user($no_ic);
-        // echo "<pre/>"; print_r($result); exit();
+        $session = service('session');
+        // echo $no_ic;
+        $result = $this->loginAuthModel->authUser($no_ic);
+        // echo "<pre/>"; print_r($result); 
+        // echo $result['userid'];
+        // exit();
         if ($result) {
-            foreach ($result as $row) {
+            foreach ($result as $row) {                
                 $r_IdPengguna = $row->userid;
                 $r_Pengenalan = $row->nokp;
                 $r_NoK = $row->nok;
@@ -243,6 +249,15 @@ class Login_c extends BaseController
                 $r_JenisPengguna = $row->role;
             }
 
+            
+            $anjungProfile = new Home_m();
+            $res_profile = $anjungProfile->getUserProfile($r_NoK);
+
+            foreach ($res_profile as $list) {
+                $role = $list->role;
+                $rolename = $list->role_name;
+            }            
+
             if ($r_Pengenalan != "") {
                 $sess_array = [
                     's_IdPengguna' => $r_IdPengguna,
@@ -251,10 +266,11 @@ class Login_c extends BaseController
                     's_Nama' => $r_Nama,
                     's_Ptj' => $r_Ptj,
                     's_Status' => $r_Status,
-                    's_JenisPengguna' => $r_JenisPengguna,                    
+                    's_JenisPengguna' => $rolename,                    
                 ];
 
-                session()->set('logged_in', $sess_array);
+                $session->set($sess_array);
+                // session()->set('logged_in', $sess_array);
 
                 if ($r_Status != "Aktif") {
                     session()->setFlashdata('Mesej', "Log Masuk Anda Tidak Aktif.Sila Hubungi Pentadbir Sistem");
@@ -264,7 +280,12 @@ class Login_c extends BaseController
                         'lastlogin' => date('Y-m-d H:i:s')                        
                     ];
                     $this->loginAuthModel->_update_user($r_IdPengguna, $data_update);
-                    return redirect()->to('front');
+
+                    // Redirect to the original URL if it exists
+                    $redirect_url = $session->get('redirect_url') ?: 'front';
+                    $session->remove('redirect_url');
+                    return redirect()->to($redirect_url);
+                    // return redirect()->to('front');
                 }
             }
         } else {
@@ -301,3 +322,4 @@ class Login_c extends BaseController
         $email->send();
     }
 }
+

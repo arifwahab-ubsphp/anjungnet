@@ -8,8 +8,6 @@
     <?= script_tag(base_url("assets/vendors/sneats/vendor/libs/jquery/jquery.js")) ?>
     <?= script_tag(base_url("assets/vendors/sneats/vendor/libs/popper/popper.js")) ?>
     <?= script_tag(base_url("assets/vendors/sneats/vendor/js/bootstrap.js")) ?>
-    <?= script_tag(base_url("assets/vendors/sneats/vendor/js/datatables.js")) ?>
-    <?= script_tag(base_url("assets/vendors/sneats/vendor/js/datatables.min.js")) ?>
     <?= script_tag(base_url("assets/vendors/sneats/vendor/libs/perfect-scrollbar/perfect-scrollbar.js")) ?>
 
     <!-- <script src="../assets/vendor/js/menu.js"></script> -->
@@ -21,18 +19,33 @@
     <!-- Main JS -->
     <!-- <script src="../assets/js/main.js"></script> -->
     <?= script_tag(base_url("assets/vendors/sneats/js/main.js")) ?>
-
-    <script>
-$(document).ready(function() {
-    $('.table').DataTable();
-
-});
-    </script>
-
+    <?= script_tag(base_url("assets/vendors/datatables/jquery.js")) ?>
+    <?= script_tag(base_url("assets/vendors/datatables/datatables.js")) ?>
+    <?= script_tag(base_url("assets/vendors/datatables/datatables.min.js")) ?>
 
     <!-- Page JS -->
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    </body>
-    </html>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                
+                {
+                    extend: 'excel',
+                    className: 'btn btn-secondary'
+                },
+                {
+                    extend: 'pdf',
+                    className: 'btn btn-primary'
+                },
+                
+            ]
+            });
+        });
+    </script>
+  </body>
+</html>

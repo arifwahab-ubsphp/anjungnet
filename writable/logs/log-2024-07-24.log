@@ -1,0 +1,43 @@
+INFO - 2024-07-24 12:30:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:32:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-24 12:32:52 --> Call to undefined method Modules\Dashboard\Models\Login_m::_auth_inteam
+in SYSTEMPATH\Model.php on line 873.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(166): CodeIgniter\Model->__call('_auth_inteam', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 12:34:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-24 12:35:24 --> Call to undefined method Modules\Dashboard\Models\Login_m::_auth_inteam
+in SYSTEMPATH\Model.php on line 873.
+ 1 ROOTPATH\Modules\Dashboard\Controllers\Login_c.php(166): CodeIgniter\Model->__call('_auth_inteam', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): Modules\Dashboard\Controllers\Login_c->auth_login()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Modules\Dashboard\Controllers\Login_c))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 12:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-24 04:43:27 --> "loginfilter" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 354.
+ 1 SYSTEMPATH\Filters\Filters.php(354): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('loginfilter')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilter('loginfilter', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-07-24 04:44:27 --> "loginfilter" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 354.
+ 1 SYSTEMPATH\Filters\Filters.php(354): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('loginfilter')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilter('loginfilter', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 12:44:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 12:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-24 04:44:34 --> "loginfilter" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 354.
+ 1 SYSTEMPATH\Filters\Filters.php(354): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('loginfilter')
+ 2 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilter('loginfilter', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-07-24 04:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 04:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-24 04:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

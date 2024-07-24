@@ -4,14 +4,13 @@
 // });
 
 $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Controllers"], function ($routes) {
-   // $routes->get("events-list", "EventsListController::index");
-   // $routes->get("event-add", "EventInfoController::add_info"); // function view form add event
-   // $routes->add("add", "EventInfoController::save_info"); // function save the event
-   // $routes->get("event-info/(:num)", "EventInfoController::/$1");
-   // $routes->get("event-editinfo/(:num)", "EventInfoController::index_detail/$1");   // function view info for edit
-   // $routes->add("edit/(:num)", "EventInfoController::edit_info/$1"); // function edit
    $routes->get('/', 'Home_c::index');
-   // $routes->get('/home', 'Home_c::index');
+   $routes->get('/home', 'Home_c::index');
+   $routes->get('signout', 'Home_c::logout');
+
+   $routes->get('news_list', 'Pengumuman_c::index');
+   $routes->get('news_form', 'Pengumuman_c::view_form');
+   $routes->post('news_add', 'Pengumuman_c::save_news');
 
    $routes->get('banner', 'Banner_c::banner');
    $routes->get('create', 'Banner_c::create');

@@ -218,8 +218,6 @@ class Dashboard_m extends Model
         return $query->getResult();
     }
 
-    
-
     public function inteam_cari_userptj($keyword, $ptj)
     {
         return $this->db->table('peribadi a')
