@@ -27,12 +27,12 @@
 </style>
 <div class="container-xxl flex-grow-1 container-p-y">
   <div class="row">
-    <div class="col-lg-8 mb-4 order-0">
+    <div class="col-lg-12 mb-4 order-0">
       <div class="card">
         <div class="d-flex align-items-end row">
-          <div class="col-sm-7">
+          <div class="col-sm-12">
             <div class="card-body">
-              <?php echo "<pre/>"; print_r($userlist); ?>
+              <?php //echo "<pre/>"; print_r($userlist); ?>
               <?php foreach($userlist as $row):
                 $nama = $row->Nama;
                 $pusat = $row->NPusat;
@@ -49,14 +49,14 @@
               <h3 class="card-title text-primary">Selamat Datang</h3>
               <h5><?= $nama; ?> (<?= $nok; ?>)</h5>
               <h6 style="text-transform:uppercase"><?= $pusat; ?></h6>
-              <h6 style="text-transform:uppercase">Peranan: <?= $role; ?></h6>              
+              
             </div>
           </div>
           
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 order-1">
+    <!-- <div class="col-lg-4 col-md-4 order-1">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12 mb-4">
           <div class="card">
@@ -75,7 +75,7 @@
         </div>
         
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
     <div class="col-xl-3 col-md-6 mb-4">

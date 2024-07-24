@@ -10,7 +10,13 @@ class Dashboard_c extends BaseController
 {
     public function index()
     {        
-        $nok = "19379";
+        $session = service('session');        
+        $noKP = $session->get('s_KP');
+        $nok = $session->get('s_NoK');
+        $nama_user = $session->get('s_Nama');
+        $ptj_user = $session->get('s_Ptj');
+        $jenis_user = $session->get('s_JenisPengguna');
+        
         $userModel = new Dashboard_m();
         $data['userlist'] = $userModel->inteam_get_user($nok);
         
