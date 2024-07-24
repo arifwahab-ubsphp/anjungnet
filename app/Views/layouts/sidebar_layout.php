@@ -32,150 +32,153 @@
             <div data-i18n="Layouts">Pengguna</div>            
           </a>
 
-          <ul class="menu-sub">
-            <li class="menu-item">
-              <a href="layouts-without-menu.html" class="menu-link">
-                <div data-i18n="Without menu">Senarai</div>
-              </a>
-            </li>
-            
-          </ul>
-        </li>
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Tetapan</span></li>
-        <!-- Cards -->
-        <li class="menu-item">
-          <a href="<?php echo base_url(''); ?>" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-menu-alt-left"></i>            
-            <div data-i18n="Basic">Menu</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="<?php echo base_url('admin-dashboard/news_list') ?>" class="menu-link">
-            <!-- <i class="menu-icon tf-icons bx bx-task"></i> -->
-            <i class='menu-icon tf-icons bx bxs-bell-ring'></i>
-            <div data-i18n="Basic">Pengumuman</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="#" class="menu-link">
-            <i class="menu-icon tf-icons bx bxs-image-add"></i>
-            <div data-i18n="Basic">Banner</div>
-          </a>
-        </li>
-        <!-- Misc -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Laporan</span></li>
-        <li class="menu-item">
-          <a
-            href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-            target="_blank"
-            class="menu-link"
-          >
-            <i class="menu-icon tf-icons bx bx-support"></i>
-            <div data-i18n="Support">Panduan Penggunaan Sistem</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a
-            href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-            target="_blank"
-            class="menu-link"
-          >
-            <i class="menu-icon tf-icons bx bx-file"></i>
-            <div data-i18n="Documentation">Laporan</div>
-          </a>
-        </li>
-      </ul>
-    </aside>
-    <!-- / Menu -->
+                    <ul class="menu-sub <?= isActive('cards-basic.html'); ?>">
+                        <li class="menu-item">
+                            <a href="layouts-without-menu.html" class="menu-link">
+                                <div data-i18n="Without menu">Senarai</div>
+                            </a>
+                        </li>
 
-    <!-- Layout container -->
-    <div class="layout-page">
-      <!-- Navbar -->
+                    </ul>
+                </li>
+                <li class="menu-header small text-uppercase"><span class="menu-header-text">Tetapan</span></li>
+                <!-- Cards -->
 
-      <nav
-        class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-        id="layout-navbar"
-      >
-        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-          <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-            <i class="bx bx-menu bx-sm"></i>
-          </a>
-        </div>
+                <li class="menu-item <?= isActive('admin-dashboard/menu'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/menu" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-menu-alt-left"></i>
+                        <div data-i18n="Basic">Menu</div>
+                    </a>
+                </li>
+                <li class="menu-item <?= isActive('admin-dashboard/news_list'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/news_list" class="menu-link">
+                        <!-- <i class="menu-icon tf-icons bx bx-task"></i> -->
+                        <i class='menu-icon tf-icons bx bxs-bell-ring'></i>
+                        <div data-i18n="Basic">Pengumuman</div>
+                    </a>
+                </li>
+                <li class="menu-item <?= isActive('admin-dashboard/banner'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/banner" class="menu-link">
+                        <i class="menu-icon tf-icons bx bxs-image-add"></i>
+                        <div data-i18n="Basic">Banner</div>
+                    </a>
+                </li>
+                <li class="menu-item <?= isActive('admin-dashboard/sso'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/sso" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-lock-open'></i>
+                        <div data-i18n="Basic">Single-Sign-On</div>
+                    </a>
+                </li>
 
-        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-          <!-- Search -->
-          <div class="navbar-nav align-items-center">
-            <div class="nav-item d-flex align-items-center">
-            <span><b>PENGUMUMAN DARI IM:</b></span><span style="color:red"> &nbsp Sistem Anjungnet v.3 Sedang Dalam Proses Pembangunan</span>
-            </div>
-          </div>
-          <!-- /Search -->
+                <!-- Misc -->
+                <li class="menu-header small text-uppercase"><span class="menu-header-text">Laporan</span></li>
+                <li class="menu-item">
+                    <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
+                        class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-support"></i>
+                        <div data-i18n="Support">Panduan Penggunaan Sistem</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                        target="_blank" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-file"></i>
+                        <div data-i18n="Documentation">Laporan</div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <!-- / Menu -->
 
-          <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <!-- User -->
-            
-          
-            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-              <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                <div class="avatar avatar-online">
-                  <img src="<?php echo base_url('assets/images/mardi.png') ?>" alt class="w-px-40 h-auto rounded-circle" />
+        <!-- Layout container -->
+        <div class="layout-page">
+            <!-- Navbar -->
+
+            <nav class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                id="layout-navbar">
+                <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                    <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                        <i class="bx bx-menu bx-sm"></i>
+                    </a>
                 </div>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <div class="d-flex">
-                      <div class="flex-shrink-0 me-3">
-                        <div class="avatar avatar-online">
-                          <img src="<?php echo base_url('assets/images/mardi.png') ?>" alt class="w-px-40 h-auto rounded-circle" />
+
+                <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                    <!-- Search -->
+                    <div class="navbar-nav align-items-center">
+                        <div class="nav-item d-flex align-items-center">
+                            <span><b>PENGUMUMAN DARI IM:</b></span><span style="color:red"> &nbsp Sistem Anjungnet v.3
+                                Sedang Dalam Proses Pembangunan</span>
                         </div>
-                      </div>
-                      <div class="flex-grow-1">
-                        <span class="fw-semibold d-block"><?= session()->get('s_Nama') ?></span>
-                        <small class="text-muted"><?= session()->get('s_JenisPengguna') ?></small>
-                      </div>
                     </div>
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <i class="bx bx-user me-2"></i>
-                    <span class="align-middle">My Profile</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <i class="bx bx-cog me-2"></i>
-                    <span class="align-middle">Settings</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <span class="d-flex align-items-center align-middle">
-                      <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                      <span class="flex-grow-1 align-middle">Billing</span>
-                      <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="<?= base_url('admin-dashboard/signout') ?>">
-                    <i class="bx bx-power-off me-2"></i>
-                    <span class="align-middle">Log Out</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!--/ User -->
-          </ul>
-        </div>
-      </nav>
+                    <!-- /Search -->
+
+                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        <!-- User -->
+                        <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                data-bs-toggle="dropdown">
+                                <div class="avatar avatar-online">
+                                    <img src="<?php echo base_url('assets/images/mardi.png') ?>" alt
+                                        class="w-px-40 h-auto rounded-circle" />
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0 me-3">
+                                                <div class="avatar avatar-online">
+                                                    <img src="<?php echo base_url('assets/images/mardi.png') ?>" alt
+                                                        class="w-px-40 h-auto rounded-circle" />
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <span class="fw-semibold d-block">John Doe</span>
+                                                <small class="text-muted">Admin</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bx bx-user me-2"></i>
+                                        <span class="align-middle">My Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bx bx-cog me-2"></i>
+                                        <span class="align-middle">Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <span class="d-flex align-items-center align-middle">
+                                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                                            <span class="flex-grow-1 align-middle">Billing</span>
+                                            <span
+                                                class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="<?= base_url('admin-dashboard/signout') ?>">
+                                        <i class="bx bx-power-off me-2"></i>
+                                        <span class="align-middle">Log Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--/ User -->
+                    </ul>
+                </div>
+            </nav>
 
       <!-- / Navbar -->
 
