@@ -23,8 +23,8 @@
     <div class="message">Redirecting...</div>
 
     <form action="<?= esc($login_action_url) ?>" method="post" id="loginForm">
-        <input type="hidden" name="<?= esc($att_name) ?>" value="990811145963">
-        <input type="hidden" name="<?= esc($att_password) ?>" value="mizan19379@MARDI">
+        <input type="hidden" name="<?= esc($att_name) ?>" value="<?= esc(session('s_KP')) ?>">
+        <input type="hidden" name="<?= esc($att_password) ?>" value="<?= esc(session('s_Password')) ?>">
         <?php if (isset($att_submit)): ?>
         <input type="hidden" name="<?= esc($att_submit) ?>" value="Login">
         <?php else: ?>

@@ -266,7 +266,8 @@ class Login_c extends BaseController
                     's_Nama' => $r_Nama,
                     's_Ptj' => $r_Ptj,
                     's_Status' => $r_Status,
-                    's_JenisPengguna' => $rolename,                    
+                    's_JenisPengguna' => $rolename,              
+                    's_Password' => $this->request->getPost('katalaluan'),       
                 ];
 
                 $session->set($sess_array);
@@ -322,4 +323,3 @@ class Login_c extends BaseController
         $email->send();
     }
 }
-

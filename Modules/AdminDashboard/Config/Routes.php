@@ -5,7 +5,7 @@
 
 $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Controllers"], function ($routes) {
    $routes->get('/', 'Home_c::index');
-   $routes->get('/home', 'Home_c::index');
+   $routes->get('home', 'Home_c::index');
    $routes->get('signout', 'Home_c::logout');
 
    $routes->get('news_list', 'Pengumuman_c::index');
