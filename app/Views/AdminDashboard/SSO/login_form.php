@@ -36,6 +36,19 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('loginForm').submit();
     });
+
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Disable certain keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e
+                .shiftKey && e.key === 'J')) {
+            e.preventDefault();
+        }
+    });
     </script>
 </body>
 </html>
