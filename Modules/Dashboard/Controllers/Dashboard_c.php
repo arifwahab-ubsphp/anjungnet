@@ -19,6 +19,7 @@ class Dashboard_c extends BaseController
         
         $userModel = new Dashboard_m();
         $data['userlist'] = $userModel->inteam_get_user($nok);
+        $data['foto'] = $userModel->get_foto($nok,$noKP);
         
         return view('Dashboard/view_layout3', $data);
     }

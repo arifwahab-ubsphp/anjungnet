@@ -280,4 +280,14 @@ class Dashboard_m extends Model
             ->get()
             ->getResult();
     }
+
+    public function get_foto($noK,$noKP)
+    {        
+        return $this->db->table('foto')
+            ->select('*')
+            ->where('NoK', $noK)
+            ->orWhere('NoKPL', $noKP)
+            ->get()
+            ->getResult();   
+    }
 }
