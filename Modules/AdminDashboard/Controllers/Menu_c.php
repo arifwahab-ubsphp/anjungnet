@@ -55,15 +55,46 @@ class Menu_c extends BaseController
     public function menuItemIndex($id)
     {
         $anjungMenu = new Menu_m();
+        
+        $currentMenu = $anjungMenu->find($id);
+        $data['currentMenu'] = $currentMenu;
+        
+        // Initialize breadcrumb array
+        $breadcrumbs = [];
+        
+        // Add current menu to breadcrumbs
+        if ($currentMenu) {
+            $breadcrumbs[] = $currentMenu;
+            
+            // Fetch parent menu items recursively
+            $parentId = $currentMenu->parent; // Use parent ID to fetch parent menus
+            while ($parentId) {
+                $parentMenu = $anjungMenu->find($parentId);
+                if ($parentMenu) {
+                    // Add parent menu to breadcrumbs if not already present
+                    if (!in_array($parentMenu, $breadcrumbs, true)) {
+                        array_unshift($breadcrumbs, $parentMenu); // Insert at the beginning
+                    }
+                    $parentId = $parentMenu->parent; // Get next parent ID
+                } else {
+                    break;
+                }
+            }
+        }
+        
+        $data['breadcrumbs'] = $breadcrumbs;
+    
         $data['singleList'] = $anjungMenu->find($id);
         
+        // Fetch submenus of the current menu
         $data['allList'] = $anjungMenu->getChildren($id);
-
+    
         $anjungSSO = new SSO_m();
         $data['ssoList'] = $anjungSSO->findAll();
         
         return view('AdminDashboard/Menu/menu_item', $data);
     }
+    
 
     public function menuItemStoreIndex()
     {
@@ -94,6 +125,8 @@ class Menu_c extends BaseController
 
         $anjungSSO->save($data);
 
-        return redirect()->to(base_url('admin-dashboard/menu'))->with('status', 'Sub Menu Added Successfully');
+        $menuId = $this->request->getPost('id-menu');
+
+        return redirect()->to(base_url("admin-dashboard/menu-item/$menuId"))->with('status', 'Sub Menu Added Successfully');
     }
 }

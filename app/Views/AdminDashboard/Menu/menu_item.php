@@ -15,10 +15,29 @@
                         echo '</div>';
                     }
                 ?>
+
+
+
                 <div class="card">
                     <div class="card-body">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?= base_url('admin-dashboard/menu') ?>">Menu
+                                        Group</a>
+                                </li>
+                                <?php if (!empty($breadcrumbs)): ?>
+                                <?php foreach ($breadcrumbs as $breadcrumb): ?>
+                                <li class="breadcrumb-item <?= end($breadcrumbs) === $breadcrumb ? 'active' : '' ?>"
+                                    aria-current="page">
+                                    <?= end($breadcrumbs) === $breadcrumb ? $breadcrumb->nama_menu : '<a href="' . base_url('admin-dashboard/menu-item/' . $breadcrumb->id) . '">' . $breadcrumb->nama_menu . '</a>' ?>
+                                </li>
+                                <?php endforeach; ?>
+                                <?php endif; ?>
+                            </ol>
+                        </nav>
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3>Parent (<?= $singleList->nama_menu; ?>)</h3>
+                            <h3>
+                                Menu (<?= $singleList->nama_menu; ?>)</a></h3>
                         </div>
                         <div class="container mb-4">
                             <form action="<?= base_url('admin-dashboard/menu-item-store') ?>" method="POST">
@@ -141,7 +160,13 @@
                                             <td><?= $value->position_menu ?></td>
                                             <td><?= $value->jenis_menu ?></td>
                                             <td>
-                                                <?php if ($value->jenis_menu != 'Pages' && $value->jenis_menu != 'Custom' && $value->jenis_menu != 'SSO') : ?>
+                                                <?php if ($value->jenis_menu == 'Custom') : ?>
+                                                <a href="<?= $value->url_menu ?>" target="_blank"
+                                                    class="btn btn-success btn-sm" title="Open in new tab"
+                                                    target="_blank">
+                                                    <i class="bx bx-link-external"></i>
+                                                </a>
+                                                <?php elseif ($value->jenis_menu != 'Pages' && $value->jenis_menu != 'SSO') : ?>
                                                 <a href="<?= base_url('admin-dashboard/menu-item/' . $value->id) ?>"
                                                     class="btn btn-secondary btn-sm" title="Go to Sub Level">
                                                     <i class="bx bx-arrow-to-right"></i>
@@ -156,6 +181,7 @@
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
+
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>
