@@ -177,6 +177,12 @@
                                     <div class="dropdown-divider"></div>
                                 </li>
                                 <li>
+                                    <a class="dropdown-item" href="<?= base_url('front') ?>">
+                                        <i class="bx bx-building me-2"></i>
+                                        <span class="align-middle">Back to Portal</span>
+                                    </a>
+                                </li>
+                                <li>
                                     <a class="dropdown-item" href="<?= base_url('admin-dashboard/signout') ?>">
                                         <i class="bx bx-power-off me-2"></i>
                                         <span class="align-middle">Log Out</span>
