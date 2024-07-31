@@ -19,7 +19,19 @@ class Menu extends Migration
                 'type' => 'VARCHAR', 
                 'constraint' => 255
             ],
+            'perincian_menu' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255
+            ],
+            'jenis_menu' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 100
+            ],
             'url_menu' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 255
+            ],
+            'position_menu' => [
                 'type' => 'VARCHAR', 
                 'constraint' => 255
             ],
@@ -36,6 +48,14 @@ class Menu extends Migration
                 'constraint' => 11
             ],
             'aras' => [
+                'type' => 'INT', 
+                'constraint' => 11
+            ],
+            'warna_menu' => [
+               'type' => 'VARCHAR', 
+                'constraint' => 50
+            ],
+            'status_menu' => [
                 'type' => 'INT', 
                 'constraint' => 11
             ],

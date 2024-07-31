@@ -39,9 +39,10 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
    $routes->post('sso/update-attribute/(:num)', 'SSO_c::ssoUpdateAttribute/$1');
 
 
-
    $routes->get('menu', 'Menu_c::index');
+   $routes->get('menu-item/(:num)', 'Menu_c::menuItemIndex/$1');
    $routes->post('menu-store', 'Menu_c::menuStore');
+   $routes->post('menu-item-store', 'Menu_c::menuItemStoreIndex');
 
 
 

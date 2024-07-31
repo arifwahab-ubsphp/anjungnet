@@ -12,7 +12,7 @@ class Menu_m extends Model
     protected $useSoftDeletes = false;
     
     protected $allowedFields = [
-        'nama_menu', 'url_menu', 'parent', 'icon', 'susunan', 'aras'
+        'nama_menu', 'perincian_menu','jenis_menu', 'url_menu', 'position_menu', 'parent', 'icon', 'susunan', 'aras', 'warna_menu', 'status_menu', 'created_by', 'updated_by'
     ];
 
     protected $anjungDB;
@@ -21,6 +21,12 @@ class Menu_m extends Model
     {
         parent::__construct();
         $this->anjungDB = \Config\Database::connect('anjungnet');
+    }
+
+    // Get all list from column parent that exist in column id
+    public function getChildren($id)
+    {
+        return $this->anjungDB->table('anj_menu')->where('parent', $id)->get()->getResult();
     }
 
 }

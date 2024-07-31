@@ -18,12 +18,15 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3>Main Menu Group</h3>
+                            <h3>Parent (<?= $singleList->nama_menu; ?>)</h3>
                         </div>
                         <div class="container mb-4">
-                            <form action="<?= base_url('admin-dashboard/menu-store') ?>" method="POST">
+                            <form action="<?= base_url('admin-dashboard/menu-item-store') ?>" method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
+                                        <!-- id parent -->
+                                        <input type="hidden" class="form-control" id="id-menu" name="id-menu"
+                                            value="<?= $singleList->id; ?>">
                                         <div class="mb-3">
                                             <label for="nama-menu" class="form-label">Nama Menu</label>
                                             <input type="text" class="form-control" id="nama-menu" name="nama-menu"
@@ -74,17 +77,6 @@
                                             <label for="custom-input" class="form-label">Custom Input</label>
                                             <input type="text" class="form-control" id="custom-input"
                                                 name="custom-input" placeholder="Masukan Custom Input">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="position-menu" class="form-label">Position Menu</label>
-                                            <select class="form-select" id="position-menu" name="position-menu"
-                                                aria-label="Default select example">
-                                                <option value="">Silakan Pilih..</option>
-                                                <option value="Quick Access">Quick Access</option>
-                                                <option value="Menu Kiri">Menu Kiri</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -141,8 +133,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="data-menu-aras1">
-                                        <?php foreach ($parentList as $key => $value) : ?>
-                                        <?php if (is_null($value->parent)) : ?>
+                                        <?php foreach ($allList as $key => $value) : ?>
                                         <tr>
                                             <td><?= $key + 1 ?></td>
                                             <td><?= $value->nama_menu ?></td>
@@ -166,10 +157,8 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <?php endif; ?>
                                         <?php endforeach; ?>
                                     </tbody>
-
                                 </table>
                             </div>
                         </div>
