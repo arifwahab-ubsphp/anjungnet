@@ -363,9 +363,37 @@
                         <!-- <div class="row border-bottom border-top mb-3 mb-md-3 mt-2"> -->
                         <div class="row mb-3 mb-md-3 mt-2">
                             <div class="media d-flex align-items-center mb-3 mt-3">
-                                <img src="https://png.pngtree.com/png-vector/20220807/ourmid/pngtree-man-avatar-wearing-gray-suit-png-image_6102786.png"
+
+
+                                <?php 
+                                    
+                                    $gambar ="";
+                                    foreach($foto as $row):
+                                    $gambar = $row->Gambar;
+                                    endforeach;
+                                ?>
+
+                                <?php 
+
+                                if($gambar<>"" || is_null($gambar)){
+                                    echo '<img src="data:image/jpeg;base64,'.base64_encode($gambar).'" class="rounded-circle img-fluid ms-4" style="width: 55px; height: 55px;"
+                                    alt="Profile Icon"/>';
+                                }else{
+
+                                    echo '<img src="https://png.pngtree.com/png-vector/20220807/ourmid/pngtree-man-avatar-wearing-gray-suit-png-image_6102786.png"
                                     class="rounded-circle img-fluid ms-4" style="width: 50px; height: 50px;"
-                                    alt="Profile Icon">
+                                    alt="Profile Icon">';
+                                }
+
+                                ?>
+
+
+
+
+                                
+                                <!-- <img src="https://png.pngtree.com/png-vector/20220807/ourmid/pngtree-man-avatar-wearing-gray-suit-png-image_6102786.png"
+                                    class="rounded-circle img-fluid ms-4" style="width: 50px; height: 50px;"
+                                    alt="Profile Icon"> -->
                                 <div class="media-body">
 
                                     <?php 
