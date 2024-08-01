@@ -29,4 +29,14 @@ class Menu_m extends Model
         return $this->anjungDB->table('anj_menu')->where('parent', $id)->get()->getResult();
     }
 
+    public function getQuickAccessMenus()
+    {
+        return $this->where('position_menu', 'Quick Access')->orderBy('susunan', 'ASC')->findAll();
+    }
+
+    public function getLeftMenuItems()
+    {
+        return $this->where('position_menu', 'Menu Kiri')->orderBy('susunan', 'ASC')->findAll();
+    }
+
 }

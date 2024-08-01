@@ -264,6 +264,21 @@
     .offcanvas-container .offcanvas:nth-child(3) {
         z-index: 1048;
     }
+
+    .custom-card {
+        width: 100%;
+        min-height: 100px;
+        /* Adjust this value based on your desired card height */
+    }
+
+    .custom-card .card-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        height: 100%;
+    }
     </style>
 </head>
 <body>
@@ -390,7 +405,7 @@
 
 
 
-                                
+
                                 <!-- <img src="https://png.pngtree.com/png-vector/20220807/ourmid/pngtree-man-avatar-wearing-gray-suit-png-image_6102786.png"
                                     class="rounded-circle img-fluid ms-4" style="width: 50px; height: 50px;"
                                     alt="Profile Icon"> -->
@@ -412,77 +427,38 @@
 
                         <div class="d-block d-lg-none">
                             <h4 class="border-bottom mb-3">Quick Access</h4>
-                            <div class="row">
-                                <div class="col-6 col-md-3 col-lg-3 mb-3 d-flex align-items-stretch">
-                                    <div class="card bg-success w-100">
-                                        <div class="card-body">
-                                            <i class="fas fa-users"></i>
-                                            Sumber Manusia
+                            <div class="container">
+                                <div class="row">
+                                    <?php foreach ($parentList as $menu): ?>
+                                    <div class="col-6 col-md-3 col-lg-3 mb-3 d-flex align-items-stretch">
+                                        <div class="card custom-card"
+                                            style="background-color: <?php echo esc($menu->warna_menu); ?>; color: white;">
+                                            <div class="card-body">
+                                                <i class="fas fa-users"></i>
+                                                <!-- You can also make this dynamic if needed -->
+                                                <?php echo esc($menu->nama_menu); ?>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-6 col-md-3 col-lg-3 mb-3 d-flex align-items-stretch">
-                                    <div class="card bg-warning w-100">
-                                        <div class="card-body">
-                                            <i class="fas fa-chart-line"></i>
-                                            Capaian Korporat
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3 col-lg-3 mb-3 d-flex align-items-stretch">
-                                    <div class="card bg-danger w-100">
-                                        <div class="card-body">
-                                            <i class="fas fa-dollar-sign"></i>
-                                            Kewangan
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3 col-lg-3 mb-3 d-flex align-items-stretch">
-                                    <div class="card bg-info w-100">
-                                        <div class="card-body">
-                                            <i class="fas fa-flask"></i>
-                                            Capaian Saintis
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
+
+
                         </div>
-                        <div class="row button-container">
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
+                        <!-- <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
                                 <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasMain" aria-controls="offcanvasMain">HIM</button>
-                            </div>
+                            </div> -->
+                        <div class="row button-container">
+                            <?php foreach ($leftMenuList as $menu): ?>
                             <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">Sudut ICT</button>
+                                <button class="btn btn-primary w-100"
+                                    type="button"><?php echo esc($menu->nama_menu); ?></button>
                             </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">ISO</button>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">Muat Turun</button>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">Galeri Foto</button>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">imLearning</button>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">Amanat</button>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">Info</button>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">Takwim</button>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">Selamat Hari Lahir</button>
-                            </div>
-                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100">Selamat Bersara</button>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
+
 
                     </div>
                 </div>
@@ -493,38 +469,24 @@
                     <div class="card-body p-md-0">
                         <h3 class="border-bottom mb-3 d-none d-lg-block mt-3">Quick Access</h3>
                         <div class="row d-none d-lg-flex">
-                            <div class="col-6 col-md-6 col-lg-3 mb-3 d-flex align-items-stretch">
-                                <div class="card bg-success w-100">
-                                    <div class="card-body">
-                                        <i class="fas fa-users"></i>
-                                        Sumber Manusia
+
+                            <div class="container">
+                                <div class="row">
+                                    <?php foreach ($parentList as $menu): ?>
+                                    <div class="col-6 col-md-3 col-lg-3 mb-3 d-flex align-items-stretch">
+                                        <div class="card custom-card"
+                                            style="background-color: <?php echo esc($menu->warna_menu); ?>; color: white;">
+                                            <div class="card-body">
+                                                <i class="fas fa-users"></i>
+                                                <!-- You can also make this dynamic if needed -->
+                                                <?php echo esc($menu->nama_menu); ?>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-6 col-lg-3 mb-3 d-flex align-items-stretch">
-                                <div class="card bg-warning w-100">
-                                    <div class="card-body">
-                                        <i class="fas fa-chart-line"></i>
-                                        Capaian Korporat
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-3 mb-3 d-flex align-items-stretch">
-                                <div class="card bg-danger w-100">
-                                    <div class="card-body">
-                                        <i class="fas fa-dollar-sign"></i>
-                                        Kewangan
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-6 col-lg-3 mb-3 d-flex align-items-stretch">
-                                <div class="card bg-info w-100">
-                                    <div class="card-body">
-                                        <i class="fas fa-flask"></i>
-                                        Capaian Saintis
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
                         <div class="row mx-1">
