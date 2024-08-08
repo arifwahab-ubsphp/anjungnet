@@ -435,8 +435,23 @@
                                             style="background-color: <?php echo esc($menu->warna_menu); ?>; color: white;">
                                             <div class="card-body">
                                                 <i class="fas fa-users"></i>
-                                                <!-- You can also make this dynamic if needed -->
-                                                <?php echo esc($menu->nama_menu); ?>
+                                                <?php if ($menu->jenis_menu == 'SSO'): ?>
+                                                <a href="<?php echo base_url('admin-dashboard/sso/login/' . $menu->url_menu); ?>"
+                                                    target="_blank" style="color: white;">
+                                                    <?php echo esc($menu->nama_menu); ?>
+                                                </a>
+                                                <?php elseif ($menu->jenis_menu != 'SSO' && $menu->jenis_menu != 'Menu'): ?>
+                                                <a href="<?php echo esc($menu->url_menu); ?>" target="_blank"
+                                                    style="color: white;">
+                                                    <?php echo esc($menu->nama_menu); ?>
+                                                </a>
+                                                <?php else: ?>
+                                                <a href="#" style="color: white;" data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvas<?php echo $menu->id; ?>"
+                                                    aria-controls="offcanvas<?php echo $menu->id; ?>">
+                                                    <?php echo esc($menu->nama_menu); ?>
+                                                </a>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>
@@ -452,11 +467,31 @@
                             </div> -->
                         <div class="row button-container">
                             <?php foreach ($leftMenuList as $menu): ?>
+                            <?php if ($menu->jenis_menu == 'SSO'): ?>
                             <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
-                                <button class="btn btn-primary w-100"
-                                    type="button"><?php echo esc($menu->nama_menu); ?></button>
+                                <a href="<?php echo base_url('admin-dashboard/sso/login/' . $menu->url_menu); ?>"
+                                    target="_blank" class="btn btn-primary w-100">
+                                    <?php echo esc($menu->nama_menu); ?>
+                                </a>
                             </div>
+                            <?php elseif ($menu->jenis_menu != 'SSO' && $menu->jenis_menu != 'Menu'): ?>
+                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
+                                <a href="<?php echo esc($menu->url_menu); ?>" target="_blank"
+                                    class="btn btn-primary w-100">
+                                    <?php echo esc($menu->nama_menu); ?>
+                                </a>
+                            </div>
+                            <?php else: ?>
+                            <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
+                                <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas<?php echo $menu->id; ?>"
+                                    aria-controls="offcanvas<?php echo $menu->id; ?>">
+                                    <?php echo esc($menu->nama_menu); ?>
+                                </button>
+                            </div>
+                            <?php endif; ?>
                             <?php endforeach; ?>
+
                         </div>
 
 
@@ -478,12 +513,28 @@
                                             style="background-color: <?php echo esc($menu->warna_menu); ?>; color: white;">
                                             <div class="card-body">
                                                 <i class="fas fa-users"></i>
-                                                <!-- You can also make this dynamic if needed -->
-                                                <?php echo esc($menu->nama_menu); ?>
+                                                <?php if ($menu->jenis_menu == 'SSO'): ?>
+                                                <a href="<?php echo base_url('admin-dashboard/sso/login/' . $menu->url_menu); ?>"
+                                                    target="_blank" style="color: white;">
+                                                    <?php echo esc($menu->nama_menu); ?>
+                                                </a>
+                                                <?php elseif ($menu->jenis_menu != 'SSO' && $menu->jenis_menu != 'Menu'): ?>
+                                                <a href="<?php echo esc($menu->url_menu); ?>" target="_blank"
+                                                    style="color: white;">
+                                                    <?php echo esc($menu->nama_menu); ?>
+                                                </a>
+                                                <?php else: ?>
+                                                <a href="#" style="color: white;" data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvas<?php echo $menu->id; ?>"
+                                                    aria-controls="offcanvas<?php echo $menu->id; ?>">
+                                                    <?php echo esc($menu->nama_menu); ?>
+                                                </a>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>
                                     <?php endforeach; ?>
+
                                 </div>
                             </div>
 
@@ -649,30 +700,131 @@
             </ul>
         </div>
 
-        <!-- Main Offcanvas -->
+        <?php
+        // Initialize an empty array to hold all menus and their children
+        $allMenus = [];
+
+        // Function to recursively add menus and their children
+        function addMenuWithChildren(&$allMenus, $menu, $menuChildren) {
+            // Add the current menu to the array
+            $allMenus[] = $menu;
+
+            // If the menu has children, add them recursively
+            if (!empty($menu->childrenn)) {
+                foreach ($menu->childrenn as $childMenu) {
+                    addMenuWithChildren($allMenus, $childMenu, $menuChildren);
+                }
+            }
+        }
+
+        // Combine parent menus, left menus, and child menus
+        $allMenus = array_merge($parentList, $leftMenuList);
+
+        // Iterate over each menu and include their children if available
+        foreach ($allMenus as $menu) {
+            if (isset($menuChildren[$menu->id])) {
+                foreach ($menuChildren[$menu->id] as $childMenu) {
+                    addMenuWithChildren($allMenus, $childMenu, $menuChildren);
+                }
+            }
+        }
+        ?>
+
+        <?php foreach ($allMenus as $menu): ?>
         <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-            id="offcanvasMain" aria-labelledby="offcanvasMainLabel">
+            id="offcanvas<?php echo $menu->id; ?>" aria-labelledby="offcanvas<?php echo $menu->id; ?>Label">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasMainLabel">Main Offcanvas</h5>
+                <h5 class="offcanvas-title" id="offcanvas<?php echo $menu->id; ?>Label">
+                    <?php echo esc($menu->nama_menu); ?>
+                </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul>
-                    <li>Animal
-                        <ul>
-                            <li>Chicken
-                                <ul>
-                                    <li><a href="#" class="open-subcanvas" data-content="male">Male</a></li>
-                                </ul>
-                            </li>
-                            <li>Dog</li>
-                        </ul>
-                    </li>
-                    <li>Car</li>
-                    <li>School</li>
-                </ul>
+                <?php if (!empty($menu->breadcrumbPath)): ?>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-numbered">
+                        <?php foreach ($menu->breadcrumbPath as $index => $breadcrumb): ?>
+                        <li class="breadcrumb-item">
+                            <button class="btn btn-link" type="button" data-custom-toggle="tooltip"
+                                data-bs-placement="top" title="<?php echo esc($breadcrumb->nama_menu); ?>"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvas<?php echo $breadcrumb->id; ?>"
+                                aria-controls="offcanvas<?php echo $breadcrumb->id; ?>">
+                                <?php echo ($index + 1) . '.'; ?>
+                            </button>
+                        </li>
+                        <?php endforeach; ?>
+                    </ol>
+                </nav>
+                <?php endif; ?>
+                <div class="container">
+                    <div class="row">
+                        <?php if (isset($menuChildren[$menu->id]) && count($menuChildren[$menu->id]) > 0): ?>
+                        <div class="row">
+                            <?php foreach ($menuChildren[$menu->id] as $childMenu): ?>
+                            <div class="col-6 mb-3">
+                                <?php if ($childMenu->jenis_menu == 'SSO'): ?>
+                                <a href="<?php echo base_url('admin-dashboard/sso/login/' . $childMenu->url_menu); ?>"
+                                    target="_blank" class="btn btn-danger w-100"
+                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <?php echo esc($childMenu->nama_menu); ?>
+                                </a>
+                                <?php elseif ($childMenu->jenis_menu != 'SSO' && $childMenu->jenis_menu != 'Menu'): ?>
+                                <a href="<?php echo esc($childMenu->url_menu); ?>" target="_blank"
+                                    class="btn btn-primary w-100"
+                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <?php echo esc($childMenu->nama_menu); ?>
+                                </a>
+                                <?php else: ?>
+                                <button class="btn btn-warning w-100" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas<?php echo $childMenu->id; ?>"
+                                    aria-controls="offcanvas<?php echo $childMenu->id; ?>"
+                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <?php echo esc($childMenu->nama_menu); ?>
+                                </button>
+                                <?php endif; ?>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <?php else: ?>
+                        <!-- <p>No child menus available.</p> -->
+                        <?php endif; ?>
+
+                        <?php if (!empty($menu->childrenn)): ?>
+                        <div class="row">
+                            <?php foreach ($menu->childrenn as $childMenu): ?>
+                            <div class="col-6 mb-3">
+                                <?php if ($childMenu->jenis_menu == 'SSO'): ?>
+                                <a href="<?php echo base_url('admin-dashboard/sso/login/' . $childMenu->url_menu); ?>"
+                                    target="_blank" class="btn btn-danger w-100"
+                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <?php echo esc($childMenu->nama_menu); ?>
+                                </a>
+                                <?php elseif ($childMenu->jenis_menu != 'SSO' && $childMenu->jenis_menu != 'Menu'): ?>
+                                <a href="<?php echo esc($childMenu->url_menu); ?>" target="_blank"
+                                    class="btn btn-primary w-100"
+                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <?php echo esc($childMenu->nama_menu); ?>
+                                </a>
+                                <?php else: ?>
+                                <button class="btn btn-warning w-100" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas<?php echo $childMenu->id; ?>"
+                                    aria-controls="offcanvas<?php echo $childMenu->id; ?>"
+                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <?php echo esc($childMenu->nama_menu); ?>
+                                </button>
+                                <?php endif; ?>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <?php else: ?>
+                        <!-- <p>No child menus available.</p> -->
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
         </div>
+        <?php endforeach; ?>
+
 
         <!-- Placeholder for Additional Offcanvas -->
         <div id="offcanvasContainer"></div>
@@ -730,60 +882,23 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const offcanvasContainer = document.getElementById('offcanvasContainer');
+        document.querySelectorAll('[data-bs-toggle="offcanvas"]').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-bs-target').substring(1);
+                const offcanvas = document.getElementById(targetId);
 
-        document.querySelectorAll('.open-subcanvas').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const content = this.getAttribute('data-content');
-                const previousTitle = this.closest('.offcanvas').querySelector(
-                    '.offcanvas-title').textContent;
-                createAndShowOffcanvas(content, previousTitle);
+
             });
         });
+    });
+    </script>
 
-        function createAndShowOffcanvas(content, previousTitle) {
-            // Create unique ID for new offcanvas
-            const newOffcanvasId = 'offcanvas' + Date.now();
-
-            // Create new offcanvas element
-            const newOffcanvas = document.createElement('div');
-            newOffcanvas.className = 'offcanvas offcanvas-end';
-            newOffcanvas.tabIndex = -1;
-            newOffcanvas.id = newOffcanvasId;
-            newOffcanvas.setAttribute('aria-labelledby', newOffcanvasId + 'Label');
-            newOffcanvas.innerHTML = `
-            <div class="offcanvas-header">
-                <button type="button" class="btn btn-back" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <i class="bi bi-arrow-left"></i>
-                </button>
-                <h5 class="offcanvas-title" id="${newOffcanvasId}Label">${content}</h5>
-            </div>
-            <div class="offcanvas-body">
-                <p>Sub for: <b> ${previousTitle} </b></p>
-                <p>Content for ${content}</p>
-                <a href="#" class="open-subcanvas" data-content="Subcontent">Open another offcanvas</a>
-            </div>
-        `;
-
-            // Append new offcanvas to the container
-            offcanvasContainer.appendChild(newOffcanvas);
-
-            // Initialize and show new offcanvas
-            const bsOffcanvas = new bootstrap.Offcanvas(newOffcanvas);
-            bsOffcanvas.show();
-
-            // Attach event listener for further nested offcanvases
-            newOffcanvas.querySelectorAll('.open-subcanvas').forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const content = this.getAttribute('data-content');
-                    const previousTitle = this.closest('.offcanvas').querySelector(
-                        '.offcanvas-title').textContent;
-                    createAndShowOffcanvas(content, previousTitle);
-                });
-            });
-        }
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-custom-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
     });
     </script>
 </body>
