@@ -58,7 +58,7 @@ class Menu_m extends Model
     }
 
     public function getChildrenDashboard($parentId) {
-        return $this->where('parent', $parentId)->findAll();
+        return $this->where('parent', $parentId)->orderBy('susunan', 'ASC')->findAll();
     }
 
     }

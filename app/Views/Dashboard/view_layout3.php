@@ -518,7 +518,7 @@
                                                     target="_blank" style="color: white;">
                                                     <?php echo esc($menu->nama_menu); ?>
                                                 </a>
-                                                <?php elseif ($menu->jenis_menu != 'SSO' && $menu->jenis_menu != 'Menu'): ?>
+                                                <?php elseif ($menu->jenis_menu != 'SSO' && $menu->jenis_menu != 'Menu' && $menu->jenis_menu != 'Menu SSO'): ?>
                                                 <a href="<?php echo esc($menu->url_menu); ?>" target="_blank"
                                                     style="color: white;">
                                                     <?php echo esc($menu->nama_menu); ?>
@@ -749,7 +749,7 @@
                                 data-bs-placement="top" title="<?php echo esc($breadcrumb->nama_menu); ?>"
                                 data-bs-toggle="offcanvas" data-bs-target="#offcanvas<?php echo $breadcrumb->id; ?>"
                                 aria-controls="offcanvas<?php echo $breadcrumb->id; ?>">
-                                <?php echo ($index + 1) . '.'; ?>
+                                <?php echo ($index + 1) . '. '; ?><?php echo esc($breadcrumb->nama_menu); ?>
                             </button>
                         </li>
                         <?php endforeach; ?>
@@ -761,10 +761,13 @@
                         <?php if (isset($menuChildren[$menu->id]) && count($menuChildren[$menu->id]) > 0): ?>
                         <div class="row">
                             <?php foreach ($menuChildren[$menu->id] as $childMenu): ?>
-                            <div class="col-6 mb-3">
+                            <?php
+                                $columnClass = ($menu->jenis_menu == 'Menu SSO') ? 'col-6 mb-3' : 'col-12 mb-1';
+                            ?>
+                            <div class="<?php echo $columnClass; ?>">
                                 <?php if ($childMenu->jenis_menu == 'SSO'): ?>
                                 <a href="<?php echo base_url('admin-dashboard/sso/login/' . $childMenu->url_menu); ?>"
-                                    target="_blank" class="btn btn-danger w-100"
+                                    target="_blank" class="btn btn-primary w-100"
                                     style="height: 50px; display: flex; align-items: center; justify-content: center;">
                                     <?php echo esc($childMenu->nama_menu); ?>
                                 </a>
@@ -775,15 +778,17 @@
                                     <?php echo esc($childMenu->nama_menu); ?>
                                 </a>
                                 <?php else: ?>
-                                <button class="btn btn-warning w-100" type="button" data-bs-toggle="offcanvas"
+                                <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvas<?php echo $childMenu->id; ?>"
                                     aria-controls="offcanvas<?php echo $childMenu->id; ?>"
-                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    style="height: 50px; display: flex; align-items: center; justify-content: center; position: relative; padding-right: 30px; border: 1px solid black;">
                                     <?php echo esc($childMenu->nama_menu); ?>
+                                    <i class="fas fa-chevron-right" style="position: absolute; right: 10px;"></i>
                                 </button>
                                 <?php endif; ?>
                             </div>
                             <?php endforeach; ?>
+
                         </div>
                         <?php else: ?>
                         <!-- <p>No child menus available.</p> -->
@@ -792,10 +797,10 @@
                         <?php if (!empty($menu->childrenn)): ?>
                         <div class="row">
                             <?php foreach ($menu->childrenn as $childMenu): ?>
-                            <div class="col-6 mb-3">
+                            <div class="col-12 mb-1">
                                 <?php if ($childMenu->jenis_menu == 'SSO'): ?>
                                 <a href="<?php echo base_url('admin-dashboard/sso/login/' . $childMenu->url_menu); ?>"
-                                    target="_blank" class="btn btn-danger w-100"
+                                    target="_blank" class="btn btn-primary w-100"
                                     style="height: 50px; display: flex; align-items: center; justify-content: center;">
                                     <?php echo esc($childMenu->nama_menu); ?>
                                 </a>
@@ -806,12 +811,15 @@
                                     <?php echo esc($childMenu->nama_menu); ?>
                                 </a>
                                 <?php else: ?>
-                                <button class="btn btn-warning w-100" type="button" data-bs-toggle="offcanvas"
+                                <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvas<?php echo $childMenu->id; ?>"
                                     aria-controls="offcanvas<?php echo $childMenu->id; ?>"
-                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    style="position: relative; height: 50px; display: flex; align-items: center; justify-content: center; padding-right: 30px; border: 1px solid black;">
                                     <?php echo esc($childMenu->nama_menu); ?>
+                                    <i class="fas fa-chevron-right" style="position: absolute; right: 10px;"></i>
                                 </button>
+
+
                                 <?php endif; ?>
                             </div>
                             <?php endforeach; ?>

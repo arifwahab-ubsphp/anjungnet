@@ -44,6 +44,7 @@
                                                 aria-label="Default select example" onchange="showHideFields()">
                                                 <option value="">Silakan Pilih..</option>
                                                 <option value="Menu">Menu</option>
+                                                <option value="Menu SSO">Menu SSO</option>
                                                 <option value="SSO">SSO</option>
                                                 <option value="Pages">Pages</option>
                                                 <option value="Custom">Custom</option>
