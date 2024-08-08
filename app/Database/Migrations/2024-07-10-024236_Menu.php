@@ -59,6 +59,14 @@ class Menu extends Migration
                 'type' => 'INT', 
                 'constraint' => 11
             ],
+            'created_by' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 50
+            ],
+            'updated_by' => [
+                'type' => 'VARCHAR',
+                'constraint' => 50
+            ],
         ]);
 
         $this->forge->addKey('id', true);

@@ -4,6 +4,7 @@ namespace Modules\AdminDashboard\Controllers;
 
 use Modules\AdminDashboard\Models\Menu_m;
 use Modules\AdminDashboard\Models\SSO_m;
+use Modules\AdminDashboard\Models\Page_m;
 use App\Controllers\BaseController;
 use App\Libraries\MpdfLibrary;
 use CodeIgniter\HTTP\Response;
@@ -17,6 +18,9 @@ class Menu_c extends BaseController
 
         $anjungSSO = new SSO_m();
         $data['ssoList'] = $anjungSSO->findAll();
+
+        $anjungPage = new Page_m();
+        $data['pageList'] = $anjungPage->findAll();
         
         return view('AdminDashboard/Menu/index', $data);
     }
@@ -91,6 +95,9 @@ class Menu_c extends BaseController
     
         $anjungSSO = new SSO_m();
         $data['ssoList'] = $anjungSSO->findAll();
+
+        $anjungPage = new Page_m();
+        $data['pageList'] = $anjungPage->findAll();
         
         return view('AdminDashboard/Menu/menu_item', $data);
     }

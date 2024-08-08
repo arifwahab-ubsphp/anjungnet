@@ -78,7 +78,7 @@
                                             <select class="form-select" id="sso-option" name="sso-option">
                                                 <option value="">Select SSO Option..</option>
                                                 <?php foreach ($ssoList as $sso) : ?>
-                                                <option value="<?= $sso->login_action_url ?>"><?= $sso->app_name ?>
+                                                <option value="<?= $sso->id ?>"><?= $sso->app_name ?>
                                                 </option>
                                                 <?php endforeach; ?>
                                             </select>
@@ -87,8 +87,14 @@
                                     <div class="col-md-6" id="additional-pages-field" style="display: none;">
                                         <div class="mb-3">
                                             <label for="pages-input" class="form-label">Pages Input</label>
-                                            <input type="text" class="form-control" id="pages-input" name="pages-input"
-                                                placeholder="Masukan Pages Input">
+                                            <select class="form-select" id="pages-input" name="pages-input">
+                                                <option disabled selected value="">Select Pages Blog Option..</option>
+                                                <?php foreach ($pageList as $page) : ?>
+                                                <option value="<?= base_url('admin-dashboard/blog/') . $page->id ?>">
+                                                    <?= $page->page_title ?>
+                                                </option>
+                                                <?php endforeach; ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6" id="additional-custom-field" style="display: none;">
@@ -160,13 +166,13 @@
                                             <td><?= $value->position_menu ?></td>
                                             <td><?= $value->jenis_menu ?></td>
                                             <td>
-                                                <?php if ($value->jenis_menu == 'Custom') : ?>
+                                                <?php if ($value->jenis_menu == 'Custom' || $value->jenis_menu == 'Pages') : ?>
                                                 <a href="<?= $value->url_menu ?>" target="_blank"
                                                     class="btn btn-success btn-sm" title="Open in new tab"
                                                     target="_blank">
                                                     <i class="bx bx-link-external"></i>
                                                 </a>
-                                                <?php elseif ($value->jenis_menu != 'Pages' && $value->jenis_menu != 'SSO') : ?>
+                                                <?php elseif ($value->jenis_menu != 'SSO') : ?>
                                                 <a href="<?= base_url('admin-dashboard/menu-item/' . $value->id) ?>"
                                                     class="btn btn-secondary btn-sm" title="Go to Sub Level">
                                                     <i class="bx bx-arrow-to-right"></i>

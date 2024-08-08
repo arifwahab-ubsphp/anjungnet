@@ -39,4 +39,26 @@ class Menu_m extends Model
         return $this->where('position_menu', 'Menu Kiri')->orderBy('susunan', 'ASC')->findAll();
     }
 
-}
+    public function getBreadcrumbPath($id)
+    {
+        $path = [];
+        $currentId = $id;
+
+        while ($currentId) {
+            $menu = $this->find($currentId);
+            if ($menu) {
+                $path[] = $menu;
+                $currentId = $menu->parent;
+            } else {
+                break;
+            }
+        }
+
+        return array_reverse($path);
+    }
+
+    public function getChildrenDashboard($parentId) {
+        return $this->where('parent', $parentId)->findAll();
+    }
+
+    }
