@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use Modules\Dashboard\Models\Dashboard_m;
 use CodeIgniter\HTTP\Response;
 use Modules\AdminDashboard\Models\Menu_m;
+use Modules\AdminDashboard\Models\SSO_m;
 
 class Dashboard_c extends BaseController
 {
@@ -26,7 +27,37 @@ class Dashboard_c extends BaseController
         $data['parentList'] = $anjungMenu->getQuickAccessMenus();
         $data['leftMenuList'] = $anjungMenu->getLeftMenuItems();
 
+        foreach ($data['parentList'] as $menu) {
+            $menu->breadcrumbPath = $anjungMenu->getBreadcrumbPath($menu->id);
+        }
+        foreach ($data['leftMenuList'] as $menu) {
+            $menu->breadcrumbPath = $anjungMenu->getBreadcrumbPath($menu->id);
+        }
+
+        $data['menuChildren'] = [];
+        foreach (array_merge($data['parentList'], $data['leftMenuList']) as $menu) {
+            $data['menuChildren'][$menu->id] = $anjungMenu->getChildrenDashboard($menu->id);
+        }
+        
+        foreach ($data['menuChildren'] as $parentId => $children) {
+            foreach ($children as $childMenu) {
+                $this->processChildMenu($childMenu, $anjungMenu);
+            }
+        }
+
+        $anjungSSO = new SSO_m();
+        $data['ssoList'] = $anjungSSO->findAll();
         
         return view('Dashboard/view_layout3', $data);
+    }
+
+    private function processChildMenu($menu, $anjungMenu)
+    {
+        $menu->breadcrumbPath = $anjungMenu->getBreadcrumbPath($menu->id);
+        $menu->childrenn = $anjungMenu->getChildrenDashboard($menu->id);
+
+        foreach ($menu->childrenn as &$childMenu) {
+            $this->processChildMenu($childMenu, $anjungMenu);
+        }
     }
 }
