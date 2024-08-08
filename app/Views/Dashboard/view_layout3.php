@@ -440,7 +440,7 @@
                                                     target="_blank" style="color: white;">
                                                     <?php echo esc($menu->nama_menu); ?>
                                                 </a>
-                                                <?php elseif ($menu->jenis_menu != 'SSO' && $menu->jenis_menu != 'Menu'): ?>
+                                                <?php elseif ($menu->jenis_menu != 'SSO' && $menu->jenis_menu != 'Menu' && $menu->jenis_menu != 'Menu SSO'): ?>
                                                 <a href="<?php echo esc($menu->url_menu); ?>" target="_blank"
                                                     style="color: white;">
                                                     <?php echo esc($menu->nama_menu); ?>
