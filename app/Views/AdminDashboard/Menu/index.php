@@ -56,7 +56,7 @@
                                             <select class="form-select" id="sso-option" name="sso-option">
                                                 <option value="">Select SSO Option..</option>
                                                 <?php foreach ($ssoList as $sso) : ?>
-                                                <option value="<?= $sso->login_action_url ?>"><?= $sso->app_name ?>
+                                                <option value="<?= $sso->id ?>"><?= $sso->app_name ?>
                                                 </option>
                                                 <?php endforeach; ?>
                                             </select>
@@ -65,8 +65,13 @@
                                     <div class="col-md-6" id="additional-pages-field" style="display: none;">
                                         <div class="mb-3">
                                             <label for="pages-input" class="form-label">Pages Input</label>
-                                            <input type="text" class="form-control" id="pages-input" name="pages-input"
-                                                placeholder="Masukan Pages Input">
+                                            <select class="form-select" id="pages-input" name="pages-input">
+                                                <option disabled selected value="">Select Pages Blog Option..</option>
+                                                <?php foreach ($pageList as $page) : ?>
+                                                <option value="<?= base_url('admin-dashboard/blog/') . $page->id ?>">
+                                                </option>
+                                                <?php endforeach; ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6" id="additional-custom-field" style="display: none;">
@@ -140,7 +145,7 @@
                                             <th>Tindakan</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="data-menu-aras1">
+                                    <tbody>
                                         <?php foreach ($parentList as $key => $value) : ?>
                                         <?php if (is_null($value->parent)) : ?>
                                         <tr>
