@@ -45,6 +45,22 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
    $routes->post('menu-item-store', 'Menu_c::menuItemStoreIndex');
 
 
+   $routes->get('file', 'File_c::index');
+   $routes->get('file-item/(:num)', 'File_c::fileItemIndex/$1');
+   $routes->post('file-store', 'File_c::fileStore');
+   $routes->post('file-item-store', 'File_c::fileItemStoreIndex');
 
+   $routes->get('page', 'Page_c::index');
+   $routes->get('page-create', 'Page_c::create');
+   $routes->post('page-store', 'Page_c::pageStore');
+   $routes->get('page/edit/(:num)', 'Page_c::pageEdit/$1');
+   $routes->post('page/update/(:num)', 'Page_c::pageUpdate/$1');
+   $routes->get('page/delete/(:num)', 'Page_c::pageDelete/$1');
+   $routes->get('page/(:num)', 'Page_c::getSubFolders/$1');
+
+   $routes->get('resource', 'Page_c::resource');
+   $routes->get('resource-file-item/(:num)', 'Page_c::resourcefileItemIndex/$1');
+
+   $routes->get('blog/(:num)', 'Page_c::blog/$1');
 
 });
