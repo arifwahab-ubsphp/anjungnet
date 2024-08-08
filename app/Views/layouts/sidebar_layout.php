@@ -78,6 +78,18 @@
                         <div data-i18n="Basic">Single-Sign-On</div>
                     </a>
                 </li>
+                <li class="menu-item <?= isActive('admin-dashboard/file'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/file" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-folder'></i>
+                        <div data-i18n="Basic">Folder</div>
+                    </a>
+                </li>
+                <li class="menu-item <?= isActive('admin-dashboard/page'); ?>">
+                    <a href="<?php echo base_url() ?>admin-dashboard/page" class="menu-link">
+                        <i class='menu-icon tf-icons bx bxs-file'></i>
+                        <div data-i18n="Basic">Pages</div>
+                    </a>
+                </li>
 
                 <!-- Misc -->
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Laporan</span></li>
