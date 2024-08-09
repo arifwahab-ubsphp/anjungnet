@@ -152,7 +152,7 @@
                                             <th>Bil.</th>
                                             <th>Nama Menu</th>
                                             <th>URL Menu</th>
-                                            <th>Position</th>
+                                            <th>Susunan</th>
                                             <th>Jenis Menu</th>
                                             <th>Tindakan</th>
                                         </tr>
@@ -163,7 +163,7 @@
                                             <td><?= $key + 1 ?></td>
                                             <td><?= $value->nama_menu ?></td>
                                             <td><?= $value->url_menu ?></td>
-                                            <td><?= $value->position_menu ?></td>
+                                            <td><?= $value->susunan ?></td>
                                             <td><?= $value->jenis_menu ?></td>
                                             <td>
                                                 <?php if ($value->jenis_menu == 'Custom' || $value->jenis_menu == 'Pages') : ?>

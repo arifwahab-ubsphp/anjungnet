@@ -420,7 +420,7 @@
                                     endforeach;
                                     
                                     ?>
-                                    <p class="card-text ms-4"><?= $nama; ?> (<?= $nok; ?>)</p>
+                                    <p class="card-text ms-4"><b><?= $nama; ?> (<?= $nok; ?>)</b></p>
                                 </div>
                             </div>
                         </div>
@@ -432,7 +432,7 @@
                                     <?php foreach ($parentList as $menu): ?>
                                     <div class="col-6 col-md-3 col-lg-3 mb-3 d-flex align-items-stretch">
                                         <div class="card custom-card"
-                                            style="background-color: <?php echo esc($menu->warna_menu); ?>; color: white;">
+                                            style="background-color: <?php echo esc($menu->warna_menu); ?>; color: white;  border: 1px solid black;">
                                             <div class="card-body">
                                                 <i class="fas fa-users"></i>
                                                 <?php if ($menu->jenis_menu == 'SSO'): ?>
@@ -470,21 +470,21 @@
                             <?php if ($menu->jenis_menu == 'SSO'): ?>
                             <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
                                 <a href="<?php echo base_url('admin-dashboard/sso/login/' . $menu->url_menu); ?>"
-                                    target="_blank" class="btn btn-primary w-100">
+                                    target="_blank" class="btn btn-primary w-100" style="border: 1px solid black;">
                                     <?php echo esc($menu->nama_menu); ?>
                                 </a>
                             </div>
                             <?php elseif ($menu->jenis_menu != 'SSO' && $menu->jenis_menu != 'Menu'): ?>
                             <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
                                 <a href="<?php echo esc($menu->url_menu); ?>" target="_blank"
-                                    class="btn btn-primary w-100">
+                                    class="btn btn-primary w-100" style="border: 1px solid black;">
                                     <?php echo esc($menu->nama_menu); ?>
                                 </a>
                             </div>
                             <?php else: ?>
                             <div class="col-6 col-md-4 col-lg-6 mb-2 d-flex align-items-stretch">
                                 <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvas<?php echo $menu->id; ?>"
+                                    style="border: 1px solid black;" data-bs-target="#offcanvas<?php echo $menu->id; ?>"
                                     aria-controls="offcanvas<?php echo $menu->id; ?>">
                                     <?php echo esc($menu->nama_menu); ?>
                                 </button>
@@ -510,7 +510,7 @@
                                     <?php foreach ($parentList as $menu): ?>
                                     <div class="col-6 col-md-3 col-lg-3 mb-3 d-flex align-items-stretch">
                                         <div class="card custom-card"
-                                            style="background-color: <?php echo esc($menu->warna_menu); ?>; color: white;">
+                                            style="background-color: <?php echo esc($menu->warna_menu); ?>; color: white;  border: 1px solid black;">
                                             <div class="card-body">
                                                 <i class="fas fa-users"></i>
                                                 <?php if ($menu->jenis_menu == 'SSO'): ?>
@@ -733,13 +733,16 @@
         <?php foreach ($allMenus as $menu): ?>
         <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
             id="offcanvas<?php echo $menu->id; ?>" aria-labelledby="offcanvas<?php echo $menu->id; ?>Label">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvas<?php echo $menu->id; ?>Label">
+            <div class="offcanvas-header pb-0">
+                <h5 class="offcanvas-title text-uppercase dark-mode-support"
+                    id="offcanvas<?php echo $menu->id; ?>Label">
+                    <i class="fa fa-angle-right me-1"></i><i class="fa fa-angle-right"></i>
                     <?php echo esc($menu->nama_menu); ?>
                 </h5>
+
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
+            <div class="offcanvas-body pt-0">
                 <?php if (!empty($menu->breadcrumbPath)): ?>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-numbered">
@@ -762,28 +765,33 @@
                         <div class="row">
                             <?php foreach ($menuChildren[$menu->id] as $childMenu): ?>
                             <?php
-                                $columnClass = ($menu->jenis_menu == 'Menu SSO') ? 'col-6 mb-3' : 'col-12 mb-1';
+                                $columnClass = ($menu->jenis_menu == 'Menu SSO') ? 'col-6 mb-1' : 'col-12 mb-1';
+                                $style = ($menu->jenis_menu != 'Menu SSO') ? 'height: 40px; display: flex; align-items: flex-start; justify-content: flex-start; position: relative; padding-right: 30px; border: 1px solid black;' : 'height: 40px; display: flex; align-items: center; justify-content: center; position: relative; border: 1px solid black;';
                             ?>
                             <div class="<?php echo $columnClass; ?>">
                                 <?php if ($childMenu->jenis_menu == 'SSO'): ?>
                                 <a href="<?php echo base_url('admin-dashboard/sso/login/' . $childMenu->url_menu); ?>"
-                                    target="_blank" class="btn btn-primary w-100"
-                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    target="_blank" class="btn btn-primary w-100" style="<?php echo $style; ?>">
                                     <?php echo esc($childMenu->nama_menu); ?>
+                                    <?php if ($menu->jenis_menu != 'Menu SSO'): ?>
+                                    <i class="fas fa-sign-in-alt"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                    <?php endif; ?>
                                 </a>
                                 <?php elseif ($childMenu->jenis_menu != 'SSO' && $childMenu->jenis_menu != 'Menu'): ?>
                                 <a href="<?php echo esc($childMenu->url_menu); ?>" target="_blank"
                                     class="btn btn-primary w-100"
-                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    style="height: 40px; display: flex; align-items: flex-start; justify-content: flex-start; border: 1px solid black;">
                                     <?php echo esc($childMenu->nama_menu); ?>
                                 </a>
                                 <?php else: ?>
                                 <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvas<?php echo $childMenu->id; ?>"
                                     aria-controls="offcanvas<?php echo $childMenu->id; ?>"
-                                    style="height: 50px; display: flex; align-items: center; justify-content: center; position: relative; padding-right: 30px; border: 1px solid black;">
+                                    style="height: 40px; display: flex; align-items: flex-start; justify-content: flex-start; position: relative; padding-right: 30px; border: 1px solid black;">
                                     <?php echo esc($childMenu->nama_menu); ?>
-                                    <i class="fas fa-chevron-right" style="position: absolute; right: 10px;"></i>
+                                    <i class="fas fa-chevron-right"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
                                 </button>
                                 <?php endif; ?>
                             </div>
@@ -801,22 +809,23 @@
                                 <?php if ($childMenu->jenis_menu == 'SSO'): ?>
                                 <a href="<?php echo base_url('admin-dashboard/sso/login/' . $childMenu->url_menu); ?>"
                                     target="_blank" class="btn btn-primary w-100"
-                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    style="height: 50px; display: flex; align-items: flex-start; justify-content: flex-start; border: 1px solid black;">
                                     <?php echo esc($childMenu->nama_menu); ?>
                                 </a>
                                 <?php elseif ($childMenu->jenis_menu != 'SSO' && $childMenu->jenis_menu != 'Menu'): ?>
                                 <a href="<?php echo esc($childMenu->url_menu); ?>" target="_blank"
                                     class="btn btn-primary w-100"
-                                    style="height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    style="height: 50px; display: flex; align-items: flex-start; justify-content: flex-start; border: 1px solid black;">
                                     <?php echo esc($childMenu->nama_menu); ?>
                                 </a>
                                 <?php else: ?>
                                 <button class="btn btn-primary w-100" type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvas<?php echo $childMenu->id; ?>"
                                     aria-controls="offcanvas<?php echo $childMenu->id; ?>"
-                                    style="position: relative; height: 50px; display: flex; align-items: center; justify-content: center; padding-right: 30px; border: 1px solid black;">
+                                    style="position: relative; height: 50px; display: flex; align-items: flex-start; justify-content: flex-start; padding-right: 30px; border: 1px solid black;">
                                     <?php echo esc($childMenu->nama_menu); ?>
-                                    <i class="fas fa-chevron-right" style="position: absolute; right: 10px;"></i>
+                                    <i class="fas fa-chevron-right"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
                                 </button>
 
 
