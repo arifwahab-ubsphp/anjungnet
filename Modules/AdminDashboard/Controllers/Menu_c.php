@@ -56,6 +56,13 @@ class Menu_c extends BaseController
         return redirect()->to(base_url('admin-dashboard/menu'))->with('status', 'Parent Menu Added Successfully');
     }
 
+    public function menuDelete($id)
+    {
+        $anjungMenu = new Menu_m();
+        $anjungMenu->delete($id);
+        return redirect()->to(base_url('admin-dashboard/menu'))->with('status', 'Parent Menu Deleted Successfully');
+    }
+
     public function menuItemIndex($id)
     {
         $anjungMenu = new Menu_m();
@@ -135,5 +142,12 @@ class Menu_c extends BaseController
         $menuId = $this->request->getPost('id-menu');
 
         return redirect()->to(base_url("admin-dashboard/menu-item/$menuId"))->with('status', 'Sub Menu Added Successfully');
+    }
+
+    public function menuItemDelete($id, $parentId)
+    {
+        $anjungMenu = new Menu_m();
+        $anjungMenu->delete($id);
+        return redirect()->to(base_url('admin-dashboard/menu-item/'. $parentId))->with('status', 'Sub Menu Deleted Successfully');
     }
 }

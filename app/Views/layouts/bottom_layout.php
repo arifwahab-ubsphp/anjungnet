@@ -38,7 +38,14 @@ $(document).ready(function() {
     });
 
 
+
 });
+    </script>
+
+    <script>
+function confirmDelete() {
+    return confirm("Are you sure you want to delete this item?");
+}
     </script>
     </body>
     </html>

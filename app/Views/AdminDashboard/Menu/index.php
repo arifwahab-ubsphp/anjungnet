@@ -185,8 +185,9 @@
                                                     class="btn btn-primary btn-sm" title="Edit">
                                                     <i class="bx bx-edit"></i>
                                                 </a>
-                                                <a href="<?= base_url('admin-dashboard/banner/delete/') . $value->id ?>"
-                                                    class="btn btn-danger btn-sm" title="Delete">
+                                                <a href="<?= base_url('admin-dashboard/menu/delete/') . $value->id ?>"
+                                                    class="btn btn-danger btn-sm" title="Delete"
+                                                    onclick="return confirmDelete()">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>
@@ -242,6 +243,9 @@ $(document).ready(function() {
     });
 });
 </script>
+
+
+
 
 
 <?= $this->endSection() ?>

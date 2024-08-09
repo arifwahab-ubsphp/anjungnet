@@ -144,6 +144,19 @@ class File_c extends BaseController
         return redirect()->to(base_url("admin-dashboard/file-item/$fileId"))->with('status', 'Sub File Added Successfully');
     }
     
+    public function deleteFile($id)
+    {
+        $anjungFile = new File_m();
+        $anjungFile->delete($id);
+        return redirect()->to(base_url('admin-dashboard/file'))->with('status', 'File Deleted Successfully');
+    }
+
+    public function fileItemDelete($id, $parentId)
+    {
+        $anjungFile = new File_m();
+        $anjungFile->delete($id);
+        return redirect()->to(base_url('admin-dashboard/file-item/'.$parentId))->with('status', 'Sub File Deleted Successfully');
+    }
     
     
     

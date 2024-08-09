@@ -25,7 +25,7 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
    $routes->post('banner-item-store', 'Banner_Item_c::bannerItemStore');
    $routes->get('banner-item/edit/(:num)', 'Banner_Item_c::bannerItemEdit/$1');
    $routes->post('banner-item/update/(:num)', 'Banner_Item_c::bannerItemUpdate/$1');
-   $routes->get('banner-item/delete/(:num)', 'Banner_Item_c::bannerItemDelete/$1');
+   $routes->get('banner-item/delete/(:num)/(:num)', 'Banner_Item_c::bannerItemDelete/$1/$2');
 
 
    $routes->get('sso', 'SSO_c::index');
@@ -40,13 +40,17 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
 
 
    $routes->get('menu', 'Menu_c::index');
+   $routes->get('menu/delete/(:num)', 'Menu_c::menuDelete/$1');
    $routes->get('menu-item/(:num)', 'Menu_c::menuItemIndex/$1');
+   $routes->get('menu-item/delete/(:num)/(:num)', 'Menu_c::menuItemDelete/$1/$2');
    $routes->post('menu-store', 'Menu_c::menuStore');
    $routes->post('menu-item-store', 'Menu_c::menuItemStoreIndex');
 
 
    $routes->get('file', 'File_c::index');
+   $routes->get('file/delete/(:num)', 'File_c::deleteFile/$1');
    $routes->get('file-item/(:num)', 'File_c::fileItemIndex/$1');
+   $routes->get('file-item/delete/(:num)/(:num)', 'File_c::fileItemDelete/$1/$2');
    $routes->post('file-store', 'File_c::fileStore');
    $routes->post('file-item-store', 'File_c::fileItemStoreIndex');
 

@@ -111,10 +111,10 @@ class Banner_Item_c extends BaseController
         return redirect()->to(base_url('admin-dashboard/banner'))->with('status', 'Banner Updated Successfully');
     }
 
-    public function bannerItemDelete($id)
+    public function bannerItemDelete($id, $id_anj_banner)
     {
         $anjungBanner = new Banner_Item_m();
         $anjungBanner->delete($id);
-        return redirect()->to(base_url('admin-dashboard/banner'))->with('status', 'Banner Item Deleted Successfully');
+        return redirect()->to(base_url('admin-dashboard/banner-item/' . $id_anj_banner))->with('status', 'Banner Item Deleted Successfully');
     }
 }
