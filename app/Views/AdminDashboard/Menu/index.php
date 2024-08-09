@@ -103,7 +103,7 @@
                                                     ?
                                                 </span></label>
                                             <input type="number" class="form-control" id="susunan" name="susunan"
-                                                placeholder="ex; 1,2,3">
+                                                placeholder="ex; 1,2,3" min="1">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
