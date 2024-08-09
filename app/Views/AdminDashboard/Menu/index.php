@@ -133,7 +133,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
@@ -144,10 +144,11 @@
                                 <table id="table1" class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Bil.</th>
+                                            <th>No.</th>
                                             <th>Menu Name</th>
                                             <th>URL Menu</th>
                                             <th>Position</th>
+                                            <th>Sequence</th>
                                             <th>Menu Type</th>
                                             <th>Action</th>
                                         </tr>
@@ -160,12 +161,24 @@
                                             <td><?= $value->nama_menu ?></td>
                                             <td><?= $value->url_menu ?></td>
                                             <td><?= $value->position_menu ?></td>
+                                            <td><?= $value->susunan ?></td>
                                             <td><?= $value->jenis_menu ?></td>
                                             <td>
                                                 <?php if ($value->jenis_menu != 'Pages' && $value->jenis_menu != 'Custom' && $value->jenis_menu != 'SSO') : ?>
                                                 <a href="<?= base_url('admin-dashboard/menu-item/' . $value->id) ?>"
                                                     class="btn btn-secondary btn-sm" title="Go to Sub Level">
                                                     <i class="bx bx-arrow-to-right"></i>
+                                                </a>
+                                                <?php elseif ($value->jenis_menu == 'Custom' || $value->jenis_menu == 'Pages') : ?>
+                                                <a href="<?= $value->url_menu ?>" target="_blank"
+                                                    class="btn btn-success btn-sm" title="Open in new tab"
+                                                    target="_blank">
+                                                    <i class="bx bx-link-external"></i>
+                                                </a>
+                                                <?php elseif ($value->jenis_menu == 'SSO') : ?>
+                                                <a href="<?= base_url('admin-dashboard/sso/login/' . $value->url_menu) ?>"
+                                                    class="btn btn-success btn-sm" title="Login" target="_blank">
+                                                    <i class="bx bx-log-in"></i>
                                                 </a>
                                                 <?php endif; ?>
                                                 <a href="<?= base_url('admin-dashboard/banner/edit/') . $value->id ?>"

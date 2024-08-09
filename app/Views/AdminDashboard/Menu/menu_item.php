@@ -187,6 +187,11 @@
                                                     class="btn btn-secondary btn-sm" title="Go to Sub Level">
                                                     <i class="bx bx-arrow-to-right"></i>
                                                 </a>
+                                                <?php elseif ($value->jenis_menu == 'SSO') : ?>
+                                                <a href="<?= base_url('admin-dashboard/sso/login/' . $value->url_menu) ?>"
+                                                    class="btn btn-success btn-sm" title="Login" target="_blank">
+                                                    <i class="bx bx-log-in"></i>
+                                                </a>
                                                 <?php endif; ?>
                                                 <a href="<?= base_url('admin-dashboard/banner/edit/') . $value->id ?>"
                                                     class="btn btn-primary btn-sm" title="Edit">
