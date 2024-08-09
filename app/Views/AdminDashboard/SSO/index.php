@@ -48,7 +48,8 @@
                                                     <i class="bx bx-edit"></i>
                                                 </a>
                                                 <a href="<?= base_url('admin-dashboard/sso/delete/' . $row->id) ?>"
-                                                    class="btn btn-danger btn-sm" title="Delete Application">
+                                                    class="btn btn-danger btn-sm" title="Delete Application"
+                                                    onclick="return confirmDelete()">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                                 <a href="<?= base_url('admin-dashboard/sso/attribute/' . $row->id) ?>"
