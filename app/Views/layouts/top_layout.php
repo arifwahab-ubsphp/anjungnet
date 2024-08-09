@@ -36,8 +36,8 @@
     <!-- Vendors CSS -->
     <!-- <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" /> -->
     <?= link_tag(base_url("assets/vendors/sneats/vendor/libs/perfect-scrollbar/perfect-scrollbar.css")) ?>
-    <?= link_tag(base_url("assets/vendors/datatables/datatables.css")) ?>
-    <?= link_tag(base_url("assets/vendors/datatables/datatables.min.css")) ?>
+    <!-- <?= link_tag(base_url("assets/vendors/datatables/datatables.css")) ?>
+    <?= link_tag(base_url("assets/vendors/datatables/datatables.min.css")) ?> -->
 
 
 
@@ -57,6 +57,12 @@
     </script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <?= script_tag(base_url("assets/vendors/sneats/vendor/js/summernote-lite.min.js")) ?>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/2.1.3/css/dataTables.dataTables.min.css" rel="stylesheet" />
+
+
+
 
 
 </head>

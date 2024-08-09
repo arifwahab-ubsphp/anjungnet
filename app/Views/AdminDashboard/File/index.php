@@ -25,14 +25,14 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="nama-file" class="form-label">Nama Folder</label>
+                                            <label for="nama-file" class="form-label">Folder Name</label>
                                             <input type="text" class="form-control" id="nama-file" name="nama-file"
-                                                placeholder="Masukan Nama Folder">
+                                                placeholder="Enter Folder Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="jenis-file" class="form-label">Jenis Folder</label>
+                                            <label for="jenis-file" class="form-label">Folder Type</label>
                                             <select class="form-select" id="jenis-file" name="jenis-file"
                                                 aria-label="Default select example" onchange="showHideFields()">
                                                 <!-- <option value="">Silakan Pilih..</option> -->
@@ -54,7 +54,7 @@
                                             <label for="status-file" class="form-label">Status Folder</label>
                                             <select class="form-select" id="status-file" name="status-file"
                                                 aria-label="Default select example">
-                                                <option value="">Silakan Pilih..</option>
+                                                <option value="">Choose Status..</option>
                                                 <option value="1">Activated</option>
                                                 <option value="0">Deactivated</option>
                                             </select>
@@ -73,11 +73,11 @@
                                 <table id="table1" class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Bil.</th>
-                                            <th>Nama Folder</th>
+                                            <th>No.</th>
+                                            <th>Folder Name</th>
                                             <th>Uploaded File</th>
-                                            <th>Jenis Folder</th>
-                                            <th>Tindakan</th>
+                                            <th>Folder Type</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

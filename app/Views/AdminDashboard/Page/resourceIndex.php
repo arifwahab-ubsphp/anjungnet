@@ -27,9 +27,10 @@
                                     <thead>
                                         <tr>
                                             <th>Bil.</th>
-                                            <th>Nama Folder</th>
+                                            <th>Folder Name</th>
                                             <th>Uploaded File</th>
-                                            <th>Jenis Folder</th>
+                                            <th>Folder Type</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -48,7 +49,7 @@
                                                 <?php if ($value->jenis_file != 'Upload') : ?>
                                                 <i class="bx bx-folder"></i> <?= $value->jenis_file ?>
                                                 <?php endif; ?>
-                                                <?= $value->jenis_file ?>
+                                                <!-- <?= $value->jenis_file ?> -->
                                             </td>
                                             <td>
                                                 <?php if ($value->jenis_file != 'Upload') : ?>

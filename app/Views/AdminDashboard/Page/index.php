@@ -25,7 +25,7 @@
                                     <a href="<?= base_url() ?>admin-dashboard/page-create"
                                         class="btn btn-primary">Create</a>
                                 </div>
-                                <table class="table table-hover" id="myTable">
+                                <table class="table table-hover" id="table1">
                                     <thead>
                                         <tr>
                                             <th>No.</th>

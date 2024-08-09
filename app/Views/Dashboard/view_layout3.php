@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2nd Design</title>
+    <title>MARDI ANJUNGNET 3.0</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/images/mardi.png') ?>" />
 
 
     <style>
@@ -445,7 +446,7 @@
                         </div>
 
                         <div class="d-block d-lg-none">
-                            <h3 class="border-bottom mb-3">Quick Access</h3>
+                            <h4 class="border-bottom mb-3">Quick Access</h4>
                             <div class="container">
                                 <div class="row">
                                     <?php foreach ($parentList as $menu): ?>
@@ -535,7 +536,7 @@
             <div class="col-md-12 col-lg-6 main-content p-md-3">
                 <div class="card border-0">
                     <div class="card-body p-md-0">
-                        <h3 class="border-bottom mb-3 d-none d-lg-block mt-3">Quick Access</h3>
+                        <h4 class="border-bottom mb-3 d-none d-lg-block mt-3">Quick Access</h4>
                         <div class="row d-none d-lg-flex">
 
                             <div class="container">
@@ -593,7 +594,7 @@
 
                         <div class="row mx-1">
                             <div class="card text-left ribbon-carousel p-0 card-carousel-slide border-0">
-                                <img class="card-img-top" src="holder.js/100px180/" alt="">
+                                <img class="card-img-top" src="" alt="">
                                 <div class="card-body p-0">
                                     <h3 class="announce-mobile">Info Grafik</h3>
                                     <div id="carouselExample-cf"
@@ -651,7 +652,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-3 mt-3 announcement">
-                <h4 class="border-bottom card-title ms-2 mb-4 mt-3"></i>Terkini</h4>
+                <h4 class="border-bottom card-title ms-2 mb-4 mt-3">Announcements</h4>
                 <div class="scrollable-container position-relative d-block w-100 h-100">
                     <!-- Announcement Card 1 -->
                     <div class="card announcement-card mb-3">

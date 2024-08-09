@@ -49,10 +49,10 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="jenis-file" class="form-label">Jenis Folder</label>
+                                            <label for="jenis-file" class="form-label">Folder Type</label>
                                             <select class="form-select" id="jenis-file" name="jenis-file"
                                                 aria-label="Default select example" onchange="showHideFields()">
-                                                <option value="">Silakan Pilih..</option>
+                                                <option value="">Choose Folder Type..</option>
                                                 <option value="Folder">Folder</option>
                                                 <option value="Upload">Upload</option>
                                             </select>
@@ -63,9 +63,9 @@
                                         <input type="hidden" class="form-control" id="id-file" name="id-file"
                                             value="<?= $singleList->id; ?>">
                                         <div class="mb-3">
-                                            <label for="nama-file" class="form-label">Nama Folder</label>
+                                            <label for="nama-file" class="form-label">Folder Name</label>
                                             <input type="text" class="form-control" id="nama-file" name="nama-file"
-                                                placeholder="Masukan Nama Folder">
+                                                placeholder="Enter Folder Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6" id="additional-upload-field" style="display: none;">
@@ -78,10 +78,10 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="status-file" class="form-label">Status File</label>
+                                            <label for="status-file" class="form-label">File Status</label>
                                             <select class="form-select" id="status-file" name="status-file"
                                                 aria-label="Default select example">
-                                                <option value="">Silakan Pilih..</option>
+                                                <option value="">Choose File Status..</option>
                                                 <option value="1">Activated</option>
                                                 <option value="0">Deactivated</option>
                                             </select>
@@ -100,11 +100,11 @@
                                 <table id="table1" class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Bil.</th>
-                                            <th>Nama File</th>
+                                            <th>No.</th>
+                                            <th>File Name</th>
                                             <th>Uploaded File</th>
-                                            <th>Jenis File</th>
-                                            <th>Tindakan</th>
+                                            <th>File Type</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="data-menu-aras1">

@@ -63,7 +63,7 @@
                     <a href="<?php echo base_url() ?>admin-dashboard/news_list" class="menu-link">
                         <!-- <i class="menu-icon tf-icons bx bx-task"></i> -->
                         <i class='menu-icon tf-icons bx bxs-bell-ring'></i>
-                        <div data-i18n="Basic">Pengumuman</div>
+                        <div data-i18n="Basic">Announcements</div>
                     </a>
                 </li>
                 <li class="menu-item <?= isActive('admin-dashboard/banner'); ?>">

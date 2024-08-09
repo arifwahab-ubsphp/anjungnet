@@ -25,7 +25,7 @@
                                     <a href="<?= base_url() ?>admin-dashboard/sso/create" class="btn btn-primary">Create
                                         New Application</a>
                                 </div>
-                                <table class="table table-hover" id="myTable">
+                                <table class="table table-hover" id="table1">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
@@ -59,7 +59,6 @@
                                                     class="btn btn-success btn-sm" title="Login" target="_blank">
                                                     <i class="bx bx-log-in"></i>
                                                 </a>
-
                                             </td>
                                         </tr>
                                         <?php 

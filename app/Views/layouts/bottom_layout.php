@@ -18,10 +18,13 @@
 
     <!-- Main JS -->
     <!-- <script src="../assets/js/main.js"></script> -->
-    <?= script_tag(base_url("assets/vendors/sneats/js/main.js")) ?>
-    <?= script_tag(base_url("assets/vendors/datatables/jquery.js")) ?>
-    <?= script_tag(base_url("assets/vendors/datatables/datatables.js")) ?>
-    <?= script_tag(base_url("assets/vendors/datatables/datatables.min.js")) ?>
+    <!-- <?= script_tag(base_url("assets/vendors/sneats/js/main.js")) ?> -->
+    <!-- <?= script_tag(base_url("assets/vendors/datatables/jquery.js")) ?> -->
+    <!-- <?= script_tag(base_url("assets/vendors/datatables/datatables.js")) ?>
+    <?= script_tag(base_url("assets/vendors/datatables/datatables.min.js")) ?> -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.min.js"></script>
+
 
     <!-- Page JS -->
 
@@ -29,23 +32,13 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#example').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                
-                {
-                    extend: 'excel',
-                    className: 'btn btn-secondary'
-                },
-                {
-                    extend: 'pdf',
-                    className: 'btn btn-primary'
-                },
-                
-            ]
-            });
-        });
+$(document).ready(function() {
+    $('#table1').DataTable({
+
+    });
+
+
+});
     </script>
-  </body>
-</html>
+    </body>
+    </html>

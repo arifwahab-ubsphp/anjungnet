@@ -49,9 +49,10 @@
                                     <thead>
                                         <tr>
                                             <th>Bil.</th>
-                                            <th>Nama File</th>
+                                            <th>Folder Name</th>
                                             <th>Uploaded File</th>
-                                            <th>Jenis File</th>
+                                            <th>Folder Type</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="data-menu-aras1">
@@ -83,9 +84,11 @@
                                                 $filePath = base_url('uploaded/' . $decryptedFileName);
                                                 ?>
                                                 <button type="button" class="btn btn-primary copy-button"
-                                                    data-filepath="<?= $filePath ?>">
-                                                    Copy
+                                                    data-filepath="<?= $filePath ?>"
+                                                    style="width: 100px; height: 40px; font-size: 12px;">
+                                                    Copy URL
                                                 </button>
+
                                                 <label for="file-<?= $value->id ?>"></label>
                                                 <?php elseif ($value->jenis_file != 'Upload') : ?>
                                                 <a href="<?= base_url('admin-dashboard/resource-file-item/' . $value->id) ?>"

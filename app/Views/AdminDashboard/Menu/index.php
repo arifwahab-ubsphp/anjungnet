@@ -25,24 +25,24 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="nama-menu" class="form-label">Nama Menu</label>
+                                            <label for="nama-menu" class="form-label">Menu Name</label>
                                             <input type="text" class="form-control" id="nama-menu" name="nama-menu"
-                                                placeholder="Masukan Nama Menu">
+                                                placeholder="Enter Menu Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="perincian-menu" class="form-label">Perincian Menu</label>
+                                            <label for="perincian-menu" class="form-label">Menu Details</label>
                                             <input type="text" class="form-control" id="perincian-menu"
-                                                name="perincian-menu" placeholder="Masukan Perincian Menu">
+                                                name="perincian-menu" placeholder="Enter Menu Details">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="jenis-menu" class="form-label">Jenis Menu</label>
+                                            <label for="jenis-menu" class="form-label">Menu Type</label>
                                             <select class="form-select" id="jenis-menu" name="jenis-menu"
                                                 aria-label="Default select example" onchange="showHideFields()">
-                                                <option value="">Silakan Pilih..</option>
+                                                <option value="">Choose Menu Type..</option>
                                                 <option value="Menu">Menu</option>
                                                 <option value="Menu SSO">Menu SSO</option>
                                                 <option value="SSO">SSO</option>
@@ -65,11 +65,12 @@
                                     </div>
                                     <div class="col-md-6" id="additional-pages-field" style="display: none;">
                                         <div class="mb-3">
-                                            <label for="pages-input" class="form-label">Pages Input</label>
+                                            <label for="pages-input" class="form-label">Pages Input</label><br>
                                             <select class="form-select" id="pages-input" name="pages-input">
                                                 <option disabled selected value="">Select Pages Blog Option..</option>
                                                 <?php foreach ($pageList as $page) : ?>
                                                 <option value="<?= base_url('admin-dashboard/blog/') . $page->id ?>">
+                                                    <?= $page->page_title . ' (' . date('F j, Y', strtotime($page->page_publish)) . ')' ?>
                                                 </option>
                                                 <?php endforeach; ?>
                                             </select>
@@ -87,32 +88,37 @@
                                             <label for="position-menu" class="form-label">Position Menu</label>
                                             <select class="form-select" id="position-menu" name="position-menu"
                                                 aria-label="Default select example">
-                                                <option value="">Silakan Pilih..</option>
+                                                <option value="">Choose Position..</option>
                                                 <option value="Quick Access">Quick Access</option>
-                                                <option value="Menu Kiri">Menu Kiri</option>
+                                                <option value="Menu Kiri">Left Side Menu</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="susunan" class="form-label">Susunan</label>
-                                            <input type="text" class="form-control" id="susunan" name="susunan"
-                                                placeholder="Masukan Susunan">
+                                            <label for="susunan" class="form-label">Sequence Menu List<span
+                                                    data-toggle="tooltip"
+                                                    title="This is the sequence order of how your menu will be displayed"
+                                                    style="margin-left: 5px; cursor: pointer;">
+                                                    ?
+                                                </span></label>
+                                            <input type="number" class="form-control" id="susunan" name="susunan"
+                                                placeholder="ex; 1,2,3">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="aras" class="form-label">Aras</label>
-                                            <input type="text" class="form-control" id="aras" name="aras"
-                                                placeholder="Masukan Aras">
+                                            <label for="aras" class="form-label">Level</label>
+                                            <input type="number" class="form-control" id="aras" name="aras" value="1"
+                                                placeholder="Enter Level" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="status-menu" class="form-label">Status Menu</label>
+                                            <label for="status-menu" class="form-label">Menu Status</label>
                                             <select class="form-select" id="status-menu" name="status-menu"
                                                 aria-label="Default select example">
-                                                <option value="">Silakan Pilih..</option>
+                                                <option value="">Choose Status..</option>
                                                 <option value="1">Activated</option>
                                                 <option value="0">Deactivated</option>
                                             </select>
@@ -139,11 +145,11 @@
                                     <thead>
                                         <tr>
                                             <th>Bil.</th>
-                                            <th>Nama Menu</th>
+                                            <th>Menu Name</th>
                                             <th>URL Menu</th>
                                             <th>Position</th>
-                                            <th>Jenis Menu</th>
-                                            <th>Tindakan</th>
+                                            <th>Menu Type</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -213,5 +219,16 @@ function showHideFields() {
     }
 }
 </script>
+
+<script>
+$(document).ready(function() {
+    $('#pages-input').select2({
+        placeholder: "Select Pages Blog Option..",
+        allowClear: true,
+        width: '450px'
+    });
+});
+</script>
+
 
 <?= $this->endSection() ?>

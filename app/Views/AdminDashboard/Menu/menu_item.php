@@ -26,7 +26,11 @@
                                         Group</a>
                                 </li>
                                 <?php if (!empty($breadcrumbs)): ?>
-                                <?php foreach ($breadcrumbs as $breadcrumb): ?>
+                                <?php 
+                                    $counter = 1;
+                                    foreach ($breadcrumbs as $breadcrumb):
+                                    $counter++;
+                                ?>
                                 <li class="breadcrumb-item <?= end($breadcrumbs) === $breadcrumb ? 'active' : '' ?>"
                                     aria-current="page">
                                     <?= end($breadcrumbs) === $breadcrumb ? $breadcrumb->nama_menu : '<a href="' . base_url('admin-dashboard/menu-item/' . $breadcrumb->id) . '">' . $breadcrumb->nama_menu . '</a>' ?>
@@ -47,24 +51,24 @@
                                         <input type="hidden" class="form-control" id="id-menu" name="id-menu"
                                             value="<?= $singleList->id; ?>">
                                         <div class="mb-3">
-                                            <label for="nama-menu" class="form-label">Nama Menu</label>
+                                            <label for="nama-menu" class="form-label">Menu Name</label>
                                             <input type="text" class="form-control" id="nama-menu" name="nama-menu"
-                                                placeholder="Masukan Nama Menu">
+                                                placeholder="Enter Menu Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="perincian-menu" class="form-label">Perincian Menu</label>
+                                            <label for="perincian-menu" class="form-label">Menu Details</label>
                                             <input type="text" class="form-control" id="perincian-menu"
-                                                name="perincian-menu" placeholder="Masukan Perincian Menu">
+                                                name="perincian-menu" placeholder="Enter Menu Details">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="jenis-menu" class="form-label">Jenis Menu</label>
+                                            <label for="jenis-menu" class="form-label">Menu Type</label>
                                             <select class="form-select" id="jenis-menu" name="jenis-menu"
                                                 aria-label="Default select example" onchange="showHideFields()">
-                                                <option value="">Silakan Pilih..</option>
+                                                <option value="">Choose Menu Type..</option>
                                                 <option value="Menu">Menu</option>
                                                 <option value="SSO">SSO</option>
                                                 <option value="Pages">Pages</option>
@@ -91,7 +95,7 @@
                                                 <option disabled selected value="">Select Pages Blog Option..</option>
                                                 <?php foreach ($pageList as $page) : ?>
                                                 <option value="<?= base_url('admin-dashboard/blog/') . $page->id ?>">
-                                                    <?= $page->page_title ?>
+                                                    <?= $page->page_title . ' (' . date('F j, Y', strtotime($page->page_publish)) . ')' ?>
                                                 </option>
                                                 <?php endforeach; ?>
                                             </select>
@@ -106,39 +110,45 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="susunan" class="form-label">Susunan</label>
+                                            <label for="susunan" class="form-label">Sequence Menu List <span
+                                                    data-toggle="tooltip"
+                                                    title="This is the sequence order of how your menu will be displayed"
+                                                    style="margin-left: 5px; cursor: pointer;">
+                                                    ?
+                                                </span></label>
                                             <input type="text" class="form-control" id="susunan" name="susunan"
-                                                placeholder="Masukan Susunan">
+                                                placeholder="ex; 1,2,3"
+                                                title="This is a sequence order of how you menu will be display">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="aras" class="form-label">Aras</label>
+                                            <label for="aras" class="form-label">Level</label>
                                             <input type="text" class="form-control" id="aras" name="aras"
-                                                placeholder="Masukan Aras">
+                                                value="<?= $counter; ?>" placeholder="Enter Level" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="status-menu" class="form-label">Status Menu</label>
+                                            <label for="status-menu" class="form-label">Menu Status</label>
                                             <select class="form-select" id="status-menu" name="status-menu"
                                                 aria-label="Default select example">
-                                                <option value="">Silakan Pilih..</option>
+                                                <option value="">Choose Status..</option>
                                                 <option value="1">Activated</option>
                                                 <option value="0">Deactivated</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="warna-menu" class="form-label">Warna Menu</label>
                                             <input type="color" class="form-control" id="warna-menu" name="warna-menu"
                                                 value="#000000">
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
@@ -149,12 +159,12 @@
                                 <table id="table1" class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Bil.</th>
-                                            <th>Nama Menu</th>
+                                            <th>No.</th>
+                                            <th>Menu Name</th>
                                             <th>URL Menu</th>
-                                            <th>Susunan</th>
-                                            <th>Jenis Menu</th>
-                                            <th>Tindakan</th>
+                                            <th>Sequence</th>
+                                            <th>Menu Type</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="data-menu-aras1">
@@ -227,6 +237,16 @@ function showHideFields() {
         customField.style.display = 'block';
     }
 }
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#pages-input').select2({
+        placeholder: "Select Pages Blog Option..",
+        allowClear: true,
+        width: '450px'
+    });
+});
 </script>
 
 <?= $this->endSection() ?>

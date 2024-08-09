@@ -32,7 +32,7 @@
                                     <a href="<?= base_url('admin-dashboard/banner-item/create/' . $bannerId->id) ?>"
                                         class="btn btn-primary">Create</a>
                                 </div>
-                                <table class="table table-striped" style="width:100%">
+                                <table class="table table-striped" style="width:100%" id="table1">
                                     <thead>
                                         <tr>
                                             <th>No.</th>

@@ -24,7 +24,7 @@
                                     <h3>Banner List</h3>
                                     <a href="<?= base_url() ?>admin-dashboard/create" class="btn btn-primary">Create</a>
                                 </div>
-                                <table class="table table-hover" id="myTable">
+                                <table class="table table-hover" id="table1">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
