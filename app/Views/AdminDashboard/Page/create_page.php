@@ -74,67 +74,6 @@
     <?= $this->include('layouts/footer') ?>
     <!-- / Footer -->
 
-    <script>
-    function setFilePath(filePath) {
-        console.log('Received file path:', filePath);
-        window.filePath = filePath;
-    }
-
-    function insertFilePath() {
-        var filePath = window.filePath;
-        console.log('Inserting file path:', filePath);
-        if (filePath) {
-            var selectedText = $('#summernote').summernote('getSelectedText');
-            console.log('Selected text:', selectedText);
-            if (selectedText) {
-                // Create the link HTML
-                var linkHtml = `<a href="${filePath}" target="_blank">${selectedText}</a>`;
-
-                // Get the current content and replace selected text with the new link
-                $('#summernote').summernote('pasteHTML', linkHtml);
-                window.filePath = ''; // Clear the file path after insertion
-            }
-        }
-    }
-
-    function browseResource() {
-        // Open the resource window
-        var resourceWindow = window.open('<?= base_url('admin-dashboard/resource/') ?>', 'ResourceWindow',
-            'width=800,height=600');
-
-        // Wait for the resource window to return a file path
-        $(resourceWindow).on('beforeunload', function() {
-            // Example of getting filePath from the resource window
-            // Replace this part with actual logic to get filePath from the resource window
-
-            if (resourceWindow.filePath) {
-                setFilePath(resourceWindow.filePath); // Set the file path
-                insertFilePath(); // Insert the file path into the selected text
-            }
-        });
-    }
-
-    $('#summernote').summernote({
-        placeholder: 'Fill in your page content here',
-        tabsize: 2,
-        height: 200,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['codeview', 'help']],
-        ],
-
-    });
-
-    document.getElementById('browse-resource-btn').addEventListener('click', function() {
-        // Open a new window with the specified URL and dimensions
-        window.open('<?= base_url('admin-dashboard/resource/') ?>', 'ResourceWindow', 'width=800,height=600');
-    });
-    </script>
 
     <script>
     document.getElementById('publish_start_date').addEventListener('change', function() {
