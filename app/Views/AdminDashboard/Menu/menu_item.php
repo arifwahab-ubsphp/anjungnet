@@ -123,7 +123,7 @@
                                                     style="margin-left: 5px; cursor: pointer;">
                                                     ?
                                                 </span></label>
-                                            <input type="text" class="form-control" id="susunan" name="susunan"
+                                            <input type="number" class="form-control" id="susunan" name="susunan"
                                                 placeholder="ex; 1,2,3" min="1"
                                                 title="This is a sequence order of how you menu will be display">
                                         </div>
