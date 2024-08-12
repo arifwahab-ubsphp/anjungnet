@@ -104,6 +104,7 @@
                                             <th>File Name</th>
                                             <th>Uploaded File</th>
                                             <th>File Type</th>
+                                            <th>Activated</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -128,6 +129,13 @@
                                                 <?php endif; ?>
                                             </td>
                                             <td><?= $value->jenis_file ?></td>
+                                            <td class="text-center">
+                                                <div class="form-check form-switch form-switch-md">
+                                                    <input class="form-check-input" type="checkbox" name="status"
+                                                        onchange="toggleStatus(this, '<?= base_url('admin-dashboard/file-item/toggle-status/' . $value->id . '/' . $value->parent) ?>')"
+                                                        <?= $value->status_file == 1 ? 'checked' : '' ?>>
+                                                </div>
+                                            </td>
                                             <td>
                                                 <?php if ($value->jenis_file == 'Upload') : ?>
                                                 <?php
@@ -190,6 +198,13 @@ function showHideFields() {
     } else if (jenisMenu === 'Folder') {
         folderField.style.display = 'block';
     }
+}
+</script>
+
+<script>
+function toggleStatus(checkbox, baseUrl) {
+    var status = checkbox.checked ? 1 : 0;
+    location.href = baseUrl + '/' + status;
 }
 </script>
 

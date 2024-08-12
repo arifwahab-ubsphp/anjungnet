@@ -21,6 +21,16 @@ class File_c extends BaseController
         return view('AdminDashboard/File/index', $data);
     }
 
+    public function fileupdateStatus($id, $status)
+    {
+        $anjungSSO = new File_m();
+        $data = [
+            'status_file' => $status
+        ];
+        $anjungSSO->update($id, $data);
+        return redirect()->to(base_url('admin-dashboard/file'))->with('status', 'Status Updated Successfully');
+    }
+
     public function fileStore()
     {
         $anjungFile = new File_m();
@@ -83,6 +93,16 @@ class File_c extends BaseController
         return view('AdminDashboard/File/file_item', $data);
     }
     
+    public function fileitemupdateStatus($id, $parent, $status)
+    {
+        $anjungSSO = new File_m();
+        $data = [
+            'status_file' => $status
+        ];
+        $anjungSSO->update($id, $data);
+        return redirect()->to(base_url('admin-dashboard/file-item/'.$parent))->with('status', 'Status Updated Successfully');
+    }
+
 
     public function fileItemStoreIndex()
     {

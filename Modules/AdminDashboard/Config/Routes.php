@@ -50,8 +50,10 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
 
 
    $routes->get('file', 'File_c::index');
+   $routes->get('file/toggle-status/(:num)/(:num)', 'File_c::fileupdateStatus/$1/$2');
    $routes->get('file/delete/(:num)', 'File_c::deleteFile/$1');
    $routes->get('file-item/(:num)', 'File_c::fileItemIndex/$1');
+   $routes->get('file-item/toggle-status/(:num)/(:num)/(:num)', 'File_c::fileitemupdateStatus/$1/$2/$3');
    $routes->get('file-item/delete/(:num)/(:num)', 'File_c::fileItemDelete/$1/$2');
    $routes->post('file-store', 'File_c::fileStore');
    $routes->post('file-item-store', 'File_c::fileItemStoreIndex');

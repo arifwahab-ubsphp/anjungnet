@@ -35,7 +35,7 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($parentList as $key => $value) : ?>
-                                        <?php if (is_null($value->parent)) : ?>
+                                        <?php if (is_null($value->parent) && $value->status_file != 0) : ?>
                                         <tr>
                                             <td><?= $key + 1 ?></td>
                                             <td><?= $value->nama_file ?></td>

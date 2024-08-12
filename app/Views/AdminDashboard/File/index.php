@@ -77,6 +77,7 @@
                                             <th>Folder Name</th>
                                             <th>Uploaded File</th>
                                             <th>Folder Type</th>
+                                            <th>Activated</th>
                                             <th>Total Item</th>
                                             <th>Action</th>
                                         </tr>
@@ -99,6 +100,13 @@
                                                 <?php if ($value->jenis_file != 'Upload') : ?>
                                                 <i class="bx bx-folder"></i> <?= $value->jenis_file ?>
                                                 <?php endif; ?>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="form-check form-switch form-switch-md">
+                                                    <input class="form-check-input" type="checkbox" name="status"
+                                                        onchange="toggleStatus(this, '<?= base_url('admin-dashboard/file/toggle-status/' . $value->id) ?>')"
+                                                        <?= $value->status_file == 1 ? 'checked' : '' ?>>
+                                                </div>
                                             </td>
                                             <td>
                                                 <?php $countChild = array_filter($parentList, function($item) use ($value) {
@@ -159,6 +167,13 @@ function showHideFields() {
     if (jenisFile === 'Upload') {
         uploadField.style.display = 'block';
     }
+}
+</script>
+
+<script>
+function toggleStatus(checkbox, baseUrl) {
+    var status = checkbox.checked ? 1 : 0;
+    location.href = baseUrl + '/' + status;
 }
 </script>
 

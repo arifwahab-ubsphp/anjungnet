@@ -61,6 +61,7 @@
 
                                         foreach ($allList as $key => $value) : 
                                         ?>
+                                        <?php if ($value->status_file != 0) : ?>
                                         <tr>
                                             <td><?= $key + 1 ?></td>
                                             <td><?= $value->nama_file ?></td>
@@ -99,6 +100,7 @@
                                             </td>
 
                                         </tr>
+                                        <?php endif; ?>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
