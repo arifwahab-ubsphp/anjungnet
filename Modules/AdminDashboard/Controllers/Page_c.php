@@ -30,6 +30,8 @@ class Page_c extends BaseController
     public function pageStore()
     {
         $anjungPage = new Page_m();
+        $userId = session()->get('s_NoK');
+
         $data = [
             'page_title' => $this->request->getPost('title'),
             'page_description' => $this->request->getPost('description'),
@@ -37,7 +39,8 @@ class Page_c extends BaseController
             'page_start_publish' => $this->request->getPost('publish_start_date'),
             'page_end_publish' => $this->request->getPost('publish_end_date'),
             'page_approve' => $this->request->getPost('approved'),
-            'page_publish' => $this->request->getPost('published')
+            'page_publish' => $this->request->getPost('published'),
+            'created_by' => $userId
         ];
         $anjungPage->save($data);
         return redirect()->to(base_url('admin-dashboard/page'))->with('status', 'Pages Added Successfully');
@@ -53,6 +56,8 @@ class Page_c extends BaseController
     public function pageUpdate($id)
     {
         $anjungPage = new Page_m();
+        $userId = session()->get('s_NoK');
+
         $data = [
             'page_title' => $this->request->getPost('title'),
             'page_description' => $this->request->getPost('description'),
@@ -60,7 +65,8 @@ class Page_c extends BaseController
             'page_start_publish' => $this->request->getPost('publish_start_date'),
             'page_end_publish' => $this->request->getPost('publish_end_date'),
             'page_approve' => $this->request->getPost('approved'),
-            'page_publish' => $this->request->getPost('published')
+            'page_publish' => $this->request->getPost('published'),
+            'updated_by' => $userId
         ];
         $anjungPage->update($id, $data);
         return redirect()->to(base_url('admin-dashboard/page/edit/'.$id))->with('status', 'Pages Updated Successfully');

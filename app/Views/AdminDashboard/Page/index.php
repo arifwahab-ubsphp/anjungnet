@@ -47,6 +47,10 @@
                                             <td><?= $row->page_description ?></td>
                                             <td>
 
+                                                <a href="<?= base_url('admin-dashboard/blog/'. $row->id)?>"
+                                                    class="btn btn-success btn-sm" title="View" target="_blank">
+                                                    <i class="bx bx-link-external"></i>
+                                                </a>
                                                 <a href="<?= base_url('admin-dashboard/page/edit/' . $row->id) ?>"
                                                     class="btn btn-primary btn-sm" title="Edit">
                                                     <i class="bx bx-edit"></i>

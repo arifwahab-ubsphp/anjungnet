@@ -44,6 +44,14 @@ class Page extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+            'created_by' => [
+                'type' => 'VARCHAR', 
+                'constraint' => 50
+            ],
+            'updated_by' => [
+                'type' => 'VARCHAR',
+                'constraint' => 50
+            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('anj_page', true);

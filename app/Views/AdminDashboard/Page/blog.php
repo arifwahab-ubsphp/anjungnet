@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog MARDI</title>
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/images/mardi.png') ?>" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -168,9 +169,11 @@
         <h1 class="blog-title"><?= esc($blog->page_title) ?></h1>
 
         <div class="blog-meta">
-            <i class="fas fa-calendar-alt"></i> Published on: <?= date('F j, Y', strtotime($blog->page_publish)) ?>
+            <i class="fas fa-calendar-alt"></i> Published on:
+            <?= date('j F Y', strtotime($blog->page_start_publish)) ?>
             <br>
-            Created by:
+            Created by: <?= esc($blog->created_by) ?>
+
         </div>
         <div class="main-content">
             <div class="blog-content main-content">
@@ -179,7 +182,7 @@
 
         </div>
 
-        <div class="social-share">
+        <!-- <div class="social-share">
             <p>Share this article:</p>
             <a href="https://www.facebook.com/sharer/sharer.php?u=<?= current_url() ?>" target="_blank"><i
                     class="fab fa-facebook"></i></a>
@@ -187,7 +190,7 @@
                 target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= current_url() ?>&title=<?= esc($blog->page_title) ?>"
                 target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
+        </div> -->
     </div>
 
 </body>
