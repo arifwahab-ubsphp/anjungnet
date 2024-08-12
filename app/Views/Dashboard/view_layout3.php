@@ -379,7 +379,8 @@
                         <a href="<?php echo base_url() ?>login/logout" class="btn btn-sm btn-danger btn-xs">
                             <i class="fas fa-sign-out-alt me-1"></i> Logout
                         </a>
-                        <a href="<?php echo base_url() ?>admin-dashboard" class="btn btn-sm btn-primary btn-xs">
+                        <a href="<?php echo base_url() ?>admin-dashboard" class="btn btn-sm btn-primary btn-xs"
+                            title="Setting" target="_blank">
                             <i class="fas fa-cog me-1"></i>
                         </a>
 
