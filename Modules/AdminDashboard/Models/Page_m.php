@@ -12,7 +12,7 @@ class Page_m extends Model
     protected $useSoftDeletes = false;
     
     protected $allowedFields = [
-        'page_title', 'page_description', 'page_content', 'page_approve', 'page_publish'
+        'page_title', 'page_description', 'page_content', 'page_approve', 'page_publish', 'page_start_publish', 'page_end_publish'
     ];
 
     protected $anjungDB;

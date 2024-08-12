@@ -34,6 +34,8 @@ class Page_c extends BaseController
             'page_title' => $this->request->getPost('title'),
             'page_description' => $this->request->getPost('description'),
             'page_content' => $this->request->getPost('content'),
+            'page_start_publish' => $this->request->getPost('publish_start_date'),
+            'page_end_publish' => $this->request->getPost('publish_end_date'),
             'page_approve' => $this->request->getPost('approved'),
             'page_publish' => $this->request->getPost('published')
         ];
@@ -55,11 +57,13 @@ class Page_c extends BaseController
             'page_title' => $this->request->getPost('title'),
             'page_description' => $this->request->getPost('description'),
             'page_content' => $this->request->getPost('content'),
+            'page_start_publish' => $this->request->getPost('publish_start_date'),
+            'page_end_publish' => $this->request->getPost('publish_end_date'),
             'page_approve' => $this->request->getPost('approved'),
             'page_publish' => $this->request->getPost('published')
         ];
         $anjungPage->update($id, $data);
-        return redirect()->to(base_url('admin-dashboard/page'))->with('status', 'Pages Updated Successfully');
+        return redirect()->to(base_url('admin-dashboard/page/edit/'.$id))->with('status', 'Pages Updated Successfully');
     }
 
     public function pageDelete($id)

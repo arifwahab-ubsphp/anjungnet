@@ -29,10 +29,20 @@ class Page extends Migration
             'page_approve' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
+                'null' => true,
             ],
             'page_publish' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
+                'null' => true,
+            ],
+            'page_start_publish' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'page_end_publish' => [
+                'type' => 'DATETIME',
+                'null' => true,
             ],
         ]);
         $this->forge->addKey('id', true);
