@@ -78,12 +78,19 @@
                                     </div>
                                     <div class="col-md-6" id="additional-sso-field" style="display: none;">
                                         <div class="mb-3">
-                                            <label for="sso-option" class="form-label">SSO Option</label>
+                                            <label for="sso-option" class="form-label">SSO Option <span
+                                                    data-toggle="tooltip"
+                                                    title="Any SSO not listed here, please activate first in SSO section"
+                                                    style="margin-left: 5px; cursor: pointer;">
+                                                    ?
+                                                </span></label>
                                             <select class="form-select" id="sso-option" name="sso-option">
                                                 <option value="">Select SSO Option..</option>
                                                 <?php foreach ($ssoList as $sso) : ?>
+                                                <?php if ($sso->app_status == 1) : ?>
                                                 <option value="<?= $sso->id ?>"><?= $sso->app_name ?>
                                                 </option>
+                                                <?php endif; ?>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>

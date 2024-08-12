@@ -77,6 +77,7 @@
                                             <th>Folder Name</th>
                                             <th>Uploaded File</th>
                                             <th>Folder Type</th>
+                                            <th>Total Item</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -96,6 +97,12 @@
                                                 <?php if ($value->jenis_file != 'Upload') : ?>
                                                 <i class="bx bx-folder"></i> <?= $value->jenis_file ?>
                                                 <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <?php $countChild = array_filter($parentList, function($item) use ($value) {
+                                                    return $item->parent == $value->id;
+                                                });
+                                                echo count($countChild);?>
                                             </td>
                                             <td>
                                                 <?php if ($value->jenis_file != 'Upload') : ?>

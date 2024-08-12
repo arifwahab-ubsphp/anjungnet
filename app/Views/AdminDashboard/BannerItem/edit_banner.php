@@ -29,6 +29,7 @@
                                 <h3>Edit Banner Item</h3>
                                 <form action="<?= base_url('admin-dashboard/banner-item/update/'. $banner->id) ?>"
                                     method="POST">
+                                    <h4 class="border-bottom">>> <?= $banner->item_title ?></h4>
                                     <div class="form-group">
                                         <label for="title">Title <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control"
@@ -56,7 +57,7 @@
                                     </div>
 
                                     <button type="submit" class="btn btn-primary">Update</button>
-                                    <a href="<?= base_url('admin-dashboard/banner') ?>"
+                                    <a href="<?= base_url('admin-dashboard/banner-item/'). $banner->id_anj_banner ?>"
                                         class="btn btn-secondary">Back</a>
                                 </form>
 

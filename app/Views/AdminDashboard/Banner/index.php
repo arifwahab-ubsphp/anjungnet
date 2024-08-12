@@ -70,7 +70,8 @@
                                                     <i class="bx bx-edit"></i>
                                                 </a>
                                                 <a href="<?= base_url('admin-dashboard/banner/delete/' . $row->id) ?>"
-                                                    class="btn btn-danger btn-sm" title="Delete">
+                                                    class="btn btn-danger btn-sm" title="Delete"
+                                                    onclick="return confirmDelete()">
                                                     <i class="bx bx-trash"></i>
                                                 </a>
                                             </td>

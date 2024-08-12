@@ -15,7 +15,15 @@ class SSO_c extends BaseController
         return view('AdminDashboard/SSO/index', $data);
     }
 
-
+    public function ssoupdateStatus($id, $status)
+    {
+        $anjungSSO = new SSO_m();
+        $data = [
+            'app_status' => $status
+        ];
+        $anjungSSO->update($id, $data);
+        return redirect()->to(base_url('admin-dashboard/sso'))->with('status', 'Status Updated Successfully');
+    }
     public function create()
     {
         return view('AdminDashboard/SSO/create_sso');
@@ -58,7 +66,7 @@ class SSO_c extends BaseController
             'app_status' => $this->request->getPost('app_status')
         ];
         $anjungSSO->update($id, $data);
-        return redirect()->to(base_url('admin-dashboard/sso'))->with('status', 'Single Sign On Updated Successfully');
+        return redirect()->to(base_url('admin-dashboard/sso/edit/' . $id))->with('status', 'Single Sign On Updated Successfully');
     }
 
     public function ssoDelete($id)
@@ -102,7 +110,7 @@ class SSO_c extends BaseController
             'att_submit' => $this->request->getPost('att_submit'),
         ];
         $anjungSSO->update($id, $data);
-        return redirect()->to(base_url('admin-dashboard/sso'))->with('status', 'SSO Attribute Updated Successfully');
+        return redirect()->to(base_url('admin-dashboard/sso/attribute/' . $id))->with('status', 'SSO Attribute Updated Successfully');
     }
 
 }

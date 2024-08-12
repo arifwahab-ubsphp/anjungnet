@@ -31,6 +31,7 @@
                                             <th>No.</th>
                                             <th>Name</th>
                                             <th>Login URL</th>
+                                            <th>Activated</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -42,6 +43,14 @@
                                             <td><?= $count ?></td>
                                             <td><?= $row->app_name ?></td>
                                             <td><?= $row->login_url ?></td>
+                                            <!-- <td><?= $row->app_status ?></td> -->
+                                            <td class="text-center">
+                                                <div class="form-check form-switch form-switch-md">
+                                                    <input class="form-check-input" type="checkbox" name="status"
+                                                        onchange="toggleStatus(this, '<?= base_url('admin-dashboard/sso/toggle-status/' . $row->id) ?>')"
+                                                        <?= $row->app_status == 1 ? 'checked' : '' ?>>
+                                                </div>
+                                            </td>
                                             <td>
                                                 <a href="<?= base_url('admin-dashboard/sso/edit/' . $row->id) ?>"
                                                     class="btn btn-primary btn-sm" title="Edit Application">
@@ -87,5 +96,12 @@
 
 
 </div>
+
+<script>
+function toggleStatus(checkbox, baseUrl) {
+    var status = checkbox.checked ? 1 : 0;
+    location.href = baseUrl + '/' + status;
+}
+</script>
 <!-- Content wrapper -->
 <?= $this->endSection() ?>

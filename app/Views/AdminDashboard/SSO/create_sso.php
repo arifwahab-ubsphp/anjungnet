@@ -14,25 +14,30 @@
                             <div class="card-body">
                                 <h3>Add New Single Sign On</h3>
                                 <form action="<?= base_url('admin-dashboard/sso-store') ?>" method="POST">
-                                    <div class="form-group">
-                                        <label for="app_name">App Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="app_name" name="app_name" required>
+                                    <div class="row mb-2">
+                                        <div class="form-group col-6">
+                                            <label for="app_name">App Name <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="app_name" name="app_name"
+                                                required>
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="form_name">Form Name <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="form_name" name="form_name"
+                                                required>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="form_name">Form Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="form_name" name="form_name"
-                                            required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="login_url">Login URL <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="login_url" name="login_url"
-                                            required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="login_action_url">Login Action URL <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="login_action_url"
-                                            name="login_action_url" required>
+                                    <div class="row mb-2">
+                                        <div class="form-group col-6">
+                                            <label for="login_url">Login URL <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="login_url" name="login_url"
+                                                required>
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="login_action_url">Login Action URL <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="login_action_url"
+                                                name="login_action_url" required>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="submit_type">Submit Type <span class="text-danger">*</span></label>
@@ -44,15 +49,17 @@
                                     </div>
                                     <div class="form-group mt-3">
                                         <label for="app_status">App Status <span class="text-danger">*</span></label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="1" id="app_status"
-                                                name="app_status" required>
-                                            <label class="form-check-label" for="app_status">Active</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" value="0" id="app_status"
-                                                name="app_status">
-                                            <label class="form-check-label" for="app_status">Inactive</label>
+                                        <div class="row ps-3">
+                                            <div class="form-check col-1">
+                                                <input class="form-check-input" type="radio" value="1" id="app_status"
+                                                    name="app_status" required>
+                                                <label class="form-check-label" for="app_status">Active</label>
+                                            </div>
+                                            <div class="form-check col-1">
+                                                <input class="form-check-input" type="radio" value="0" id="app_status"
+                                                    name="app_status">
+                                                <label class="form-check-label" for="app_status">Inactive</label>
+                                            </div>
                                         </div>
                                         <small class="form-text text-muted">Disable/Enabled Applications</small>
                                     </div>

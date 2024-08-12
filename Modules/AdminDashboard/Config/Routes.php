@@ -30,6 +30,7 @@ $routes->group("admin-dashboard", ["namespace" => "\Modules\AdminDashboard\Contr
 
 
    $routes->get('sso', 'SSO_c::index');
+   $routes->get('sso/toggle-status/(:num)/(:num)', 'SSO_c::ssoupdateStatus/$1/$2');
    $routes->get('sso/create', 'SSO_c::create');
    $routes->post('sso-store', 'SSO_c::ssoStore');
    $routes->get('sso/edit/(:num)', 'SSO_c::ssoEdit/$1');
