@@ -5,7 +5,7 @@
 <div class="content-wrapper">
     <!-- Content -->
 
-    <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="container-fluid flex-grow-1 container-p-y m-0">
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
                 <?php 
@@ -166,10 +166,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($parentList as $key => $value) : ?>
+                                        <?php 
+                                        $count = 1;
+                                        foreach ($parentList as $key => $value) : ?>
                                         <?php if (is_null($value->parent)) : ?>
                                         <tr>
-                                            <td><?= $key + 1 ?></td>
+                                            <td><?= $count ?></td>
                                             <td><?= $value->nama_menu ?></td>
                                             <td><?= $value->url_menu ?></td>
                                             <td><?= $value->position_menu ?></td>
@@ -211,7 +213,9 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <?php endif; ?>
+                                        <?php 
+                                    $count++;
+                                    endif; ?>
                                         <?php endforeach; ?>
                                     </tbody>
 

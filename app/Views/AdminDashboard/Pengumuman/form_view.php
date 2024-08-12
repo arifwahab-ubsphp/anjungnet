@@ -3,7 +3,7 @@
 
 <!-- Content wrapper -->
 <div class="content-wrapper">
-    <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="container-fluid flex-grow-1 container-p-y">
         <div class="row">
             <div class="col-xl">
                 <div class="card mb-5 test-size">
