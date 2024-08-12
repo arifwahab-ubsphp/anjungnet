@@ -82,10 +82,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($parentList as $key => $value) : ?>
+                                        <?php 
+                                        $count = 1;
+                                        foreach ($parentList as $key => $value) : ?>
                                         <?php if (is_null($value->parent)) : ?>
                                         <tr>
-                                            <td><?= $key + 1 ?></td>
+                                            <td><?= $count ?></td>
                                             <td><?= $value->nama_file ?></td>
                                             <td>
                                                 <?php if ($value->jenis_file != 'Upload') : ?>
@@ -122,8 +124,12 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <?php endif; ?>
-                                        <?php endforeach; ?>
+                                        <?php 
+                                     $count++;  
+                                     endif; ?>
+                                        <?php
+                                    endforeach; 
+                                       ?>
                                     </tbody>
 
                                 </table>
