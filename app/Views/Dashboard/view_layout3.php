@@ -800,9 +800,11 @@
                     <ol class="breadcrumb breadcrumb-numbered">
                         <?php foreach ($menu->breadcrumbPath as $index => $breadcrumb): ?>
                         <li class="breadcrumb-item">
-                            <button class="btn btn-link" type="button" data-custom-toggle="tooltip"
-                                style=" text-decoration: none;" data-bs-placement="top"
-                                title="<?php echo esc($breadcrumb->nama_menu); ?>" data-bs-toggle="offcanvas"
+                            <!-- <button class="btn btn-link" type="button" data-custom-toggle="tooltip" -->
+                            <!-- data-bs-placement="top" title="<?php echo esc($breadcrumb->nama_menu); ?>" -->
+
+                            <button class="btn btn-link" type="button" style=" text-decoration: none;"
+                                data-bs-placement="top" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvas<?php echo $breadcrumb->id; ?>"
                                 aria-controls="offcanvas<?php echo $breadcrumb->id; ?>">
                                 <?php echo ($index + 1) . '. '; ?><?php echo esc($breadcrumb->nama_menu); ?>
