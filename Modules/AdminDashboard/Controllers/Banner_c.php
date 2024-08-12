@@ -45,6 +45,7 @@ class Banner_c extends BaseController
         $anjungBanner = new Banner_m();
         $data['banner'] = $anjungBanner->find($id);
         return view('AdminDashboard/Banner/edit_banner', $data);
+
     }
 
     public function bannerUpdate($id)
@@ -57,7 +58,9 @@ class Banner_c extends BaseController
             'banner_publish' => $this->request->getPost('published')
         ];
         $anjungBanner->update($id, $data);
-        return redirect()->to(base_url('admin-dashboard/banner'))->with('status', 'Banner Updated Successfully');
+        // return redirect()->to(base_url('admin-dashboard/banner'))->with('status', 'Banner Updated Successfully');
+        return redirect()->to(base_url('admin-dashboard/banner/edit/' . $id))->with('status', 'Banner Updated Successfully');
+
     }
 
     public function bannerDelete($id)

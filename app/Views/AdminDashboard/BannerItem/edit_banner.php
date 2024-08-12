@@ -8,6 +8,20 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
+                <?php if (session()->has('status')): ?>
+                <div class="alert alert-success">
+                    <?= session('status') ?>
+                </div>
+                <?php elseif (session()->has('error')): ?>
+                <div class="alert alert-danger">
+                    <?= session('error') ?>
+                </div>
+                <?php endif; ?>
+                <?php if (session()->has('validation')): ?>
+                <div class="alert alert-danger">
+                    <?= session('validation')->listErrors() ?>
+                </div>
+                <?php endif; ?>
                 <div class="card">
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-12">
@@ -29,19 +43,18 @@
                                             name="description"><?= set_value('description', $banner->item_description) ?></textarea>
                                     </div>
                                     <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input"
-                                            value="<?= set_value('approved', $banner->item_approve) ?>" id="approved"
-                                            name="approved" <?= $banner->item_approve == 1 ? 'checked' : '' ?>
-                                            value="1">
+                                        <input type="hidden" name="approved" value="0">
+                                        <input type="checkbox" class="form-check-input" value="1" id="approved"
+                                            name="approved" <?= $banner->item_approve == 1 ? 'checked' : '' ?>>
                                         <label class="form-check-label" for="approved">Approved</label>
                                     </div>
                                     <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input"
-                                            value="<?= set_value('published', $banner->item_publish) ?>" id="published"
-                                            name="published" <?= $banner->item_publish == 1 ? 'checked' : '' ?>
-                                            value="1">
+                                        <input type="hidden" name="published" value="0">
+                                        <input type="checkbox" class="form-check-input" value="1" id="published"
+                                            name="published" <?= $banner->item_publish == 1 ? 'checked' : '' ?>>
                                         <label class="form-check-label" for="published">Published</label>
                                     </div>
+
                                     <button type="submit" class="btn btn-primary">Update</button>
                                     <a href="<?= base_url('admin-dashboard/banner') ?>"
                                         class="btn btn-secondary">Back</a>

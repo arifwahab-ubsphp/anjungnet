@@ -30,6 +30,15 @@ class Banner_Item_c extends BaseController
         $data['bannerId'] = $anjungBannerParent->find($id_anjung_banner);
          return view('AdminDashboard/BannerItem/create_banner_item', $data);
      }
+     public function updateStatus($id, $parentID, $status)
+     {
+         $anjungBanner = new Banner_Item_m();
+         $data = [
+             'item_publish' => $status
+         ];
+         $anjungBanner->update($id, $data);
+         return redirect()->to(base_url('admin-dashboard/banner-item/' . $parentID))->with('status', 'Banner Updated Successfully');
+     }
      
      public function bannerItemStore()
      {
@@ -108,7 +117,7 @@ class Banner_Item_c extends BaseController
             'item_publish' => $this->request->getPost('published')
         ];
         $anjungBanner->update($id, $data);
-        return redirect()->to(base_url('admin-dashboard/banner'))->with('status', 'Banner Updated Successfully');
+        return redirect()->to(base_url('admin-dashboard/banner-item/edit/' . $id))->with('status', 'Banner Updated Successfully');
     }
 
     public function bannerItemDelete($id, $id_anj_banner)

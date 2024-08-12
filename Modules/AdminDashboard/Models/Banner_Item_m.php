@@ -31,10 +31,10 @@ class Banner_Item_m extends Model
     public function getBannerTitleById($id_anjung_banner)
     {
         $builder = $this->anjungDB->table('anj_banner');
-        $builder->select('banner_title');
+        $builder->select('id, banner_title');
         $builder->where('id', $id_anjung_banner);
         $query = $builder->get();
-        return $query->getRow()->banner_title;
+        return $query->getRow();
     }
 
 }

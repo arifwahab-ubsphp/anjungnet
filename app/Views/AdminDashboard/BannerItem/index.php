@@ -28,7 +28,7 @@
 
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h3>List of '<?= $bannerTitle ?>' Image Item</h3>
+                                    <h3>List of '<?= $bannerTitle->banner_title ?>' Image Item</h3>
                                     <a href="<?= base_url('admin-dashboard/banner-item/create/' . $bannerId->id) ?>"
                                         class="btn btn-primary">Create</a>
                                 </div>
@@ -64,8 +64,8 @@
                                             </td>
                                             <td class="text-center">
                                                 <div class="form-check form-switch form-switch-md">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        onchange="location.href='<?= base_url('admin-dashboard/banner-item/toggle-status/' . $row->id) ?>'"
+                                                    <input class="form-check-input" type="checkbox" name="status"
+                                                        onchange="toggleStatus(this, '<?= base_url('admin-dashboard/banner-item/toggle-status/' . $row->id . '/' . $bannerTitle->id) ?>')"
                                                         <?= $row->item_publish == 1 ? 'checked' : '' ?>>
                                                 </div>
                                             </td>
@@ -101,5 +101,12 @@
 
 
 </div>
+
+<script>
+function toggleStatus(checkbox, baseUrl) {
+    var status = checkbox.checked ? 1 : 0;
+    location.href = baseUrl + '/' + status;
+}
+</script>
 <!-- Content wrapper -->
 <?= $this->endSection() ?>
