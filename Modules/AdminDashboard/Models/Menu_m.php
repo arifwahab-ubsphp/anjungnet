@@ -31,12 +31,18 @@ class Menu_m extends Model
 
     public function getQuickAccessMenus()
     {
-        return $this->where('position_menu', 'Quick Access')->orderBy('susunan', 'ASC')->findAll();
+        return $this->where('position_menu', 'Quick Access')
+                    ->where('status_menu', 1)
+                    ->orderBy('susunan', 'ASC')
+                    ->findAll();
     }
 
     public function getLeftMenuItems()
     {
-        return $this->where('position_menu', 'Menu Kiri')->orderBy('susunan', 'ASC')->findAll();
+        return $this->where('position_menu', 'Menu Kiri')
+                    ->where('status_menu', 1)
+                    ->orderBy('susunan', 'ASC')
+                    ->findAll();
     }
 
     public function getBreadcrumbPath($id)
@@ -58,7 +64,10 @@ class Menu_m extends Model
     }
 
     public function getChildrenDashboard($parentId) {
-        return $this->where('parent', $parentId)->orderBy('susunan', 'ASC')->findAll();
+        return $this->where('parent', $parentId)
+                    ->where('status_menu', 1)
+                    ->orderBy('susunan', 'ASC')
+                    ->findAll();
     }
 
     }
