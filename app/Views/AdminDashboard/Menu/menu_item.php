@@ -171,6 +171,7 @@
                                             <th>URL Menu</th>
                                             <th>Sequence</th>
                                             <th>Menu Type</th>
+                                            <th>Activated</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -182,6 +183,13 @@
                                             <td><?= $value->url_menu ?></td>
                                             <td><?= $value->susunan ?></td>
                                             <td><?= $value->jenis_menu ?></td>
+                                            <td class="text-center">
+                                                <div class="form-check form-switch form-switch-md">
+                                                    <input class="form-check-input" type="checkbox" name="status"
+                                                        onchange="toggleStatus(this, '<?= base_url('admin-dashboard/menu-item/toggle-status/' . $value->id . '/' . $value->parent) ?>')"
+                                                        <?= $value->status_menu == 1 ? 'checked' : '' ?>>
+                                                </div>
+                                            </td>
                                             <td>
                                                 <?php if ($value->jenis_menu == 'Custom' || $value->jenis_menu == 'Pages') : ?>
                                                 <a href="<?= $value->url_menu ?>" target="_blank"
@@ -261,5 +269,13 @@ $(document).ready(function() {
     });
 });
 </script>
+
+<script>
+function toggleStatus(checkbox, baseUrl) {
+    var status = checkbox.checked ? 1 : 0;
+    location.href = baseUrl + '/' + status;
+}
+</script>
+
 
 <?= $this->endSection() ?>

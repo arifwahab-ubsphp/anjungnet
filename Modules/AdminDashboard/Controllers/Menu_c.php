@@ -25,6 +25,16 @@ class Menu_c extends BaseController
         return view('AdminDashboard/Menu/index', $data);
     }
 
+    public function menuupdateStatus($id, $status)
+    {
+        $anjungMenu = new Menu_m();
+        $data = [
+            'status_menu' => $status
+        ];
+        $anjungMenu->update($id, $data);
+        return redirect()->to(base_url('admin-dashboard/menu'))->with('status', 'Status Updated Successfully');
+    }
+
     public function menuStore()
     {
         $anjungSSO = new Menu_m();
@@ -149,5 +159,15 @@ class Menu_c extends BaseController
         $anjungMenu = new Menu_m();
         $anjungMenu->delete($id);
         return redirect()->to(base_url('admin-dashboard/menu-item/'. $parentId))->with('status', 'Sub Menu Deleted Successfully');
+    }
+
+    public function menuitemupdateStatus($id, $parent, $status)
+    {
+        $anjungMenu = new Menu_m();
+        $data = [
+            'status_menu' => $status
+        ];
+        $anjungMenu->update($id, $data);
+        return redirect()->to(base_url('admin-dashboard/menu-item/'.$parent))->with('status', 'Status Updated Successfully');
     }
 }
